@@ -1,14 +1,9 @@
-import { Button } from "flowbite-react";
-import { Component } from "./card/page";
-import { DarkThemeToggle } from "flowbite-react";
-
-export default function Page() {
-  return (
-    <>
-      <DarkThemeToggle />
-      <h2 className="textStyle">hello</h2>
-      <Button>Click me</Button>
-      <Component></Component>
-    </>
-  );
+import { client } from "@/lib/sanity";
+import { urlFor } from "@/lib/sanity";
+async function getProducts() {
+  return await client.fetch(`*[_type == "product"]`);
+}
+export default async function Page() {
+  // const products = await getProducts();
+  return <></>;
 }

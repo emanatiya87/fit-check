@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeModeScript } from "flowbite-react";
+import LayoutHeader from "@/components/LayoutHeader";
+import LayoutNav from "@/components/LayoutNav";
+import Banner from "@/components/Banner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +31,14 @@ export default function RootLayout({
       <head>
         <ThemeModeScript />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="bg-background mt-0">
+          <LayoutHeader />
+          <LayoutNav />
+        </div>
+        <Banner />
+        {children}
+      </body>
     </html>
   );
 }

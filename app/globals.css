@@ -4,7 +4,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: gray;
+  --color-primary: #c27170;
+  --color-secondary: #6f575e;
+  --color-background: #fcf2f2;
+  --color-light: #fdf4ff;
 }
 body {
   @apply bg-white dark:bg-gray-900;
@@ -15,4 +18,18 @@ body {
 }
 .iconsStyle {
   @apply text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white text-xl;
+}
+.title-bg {
+  background-image: url("/brush.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+.banner-bg {
+  background-image: url("/bgBanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
 }
