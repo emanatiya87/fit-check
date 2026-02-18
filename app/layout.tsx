@@ -5,7 +5,7 @@ import { ThemeModeScript } from "flowbite-react";
 import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
 import Banner from "@/components/Banner";
-
+import Title from "@/components/title";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,6 +40,7 @@ export default function RootLayout({
           <LayoutNav />
         </div>
         <Banner />
+        <Title />
         {children}
       </body>
     </html>
