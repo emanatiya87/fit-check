@@ -2,6 +2,10 @@
 @import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 @custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --color-primary: #c27170;
+  --color-secondary: #6f575e;
+}
 
 @theme {
   --color-primary: #c27170;
