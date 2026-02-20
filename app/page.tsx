@@ -1,6 +1,6 @@
 import { client } from "@/lib/sanity";
 import { createImageUrlBuilder } from "@sanity/image-url";
-
+import Products from "@/components/Products";
 async function getProducts() {
   const builder = createImageUrlBuilder(client);
 
@@ -8,5 +8,9 @@ async function getProducts() {
 }
 export default async function Page() {
   // const products = await getProducts();
-  return <></>;
+  return (
+    <>
+      <Products />
+    </>
+  );
 }
