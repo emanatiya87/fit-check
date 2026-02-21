@@ -1,7 +1,8 @@
 import { CardComponent } from "./Card";
-import { client } from "@/lib/sanity";
+import { client, urlFor } from "@/lib/sanity";
 import { createImageUrlBuilder } from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url";
+export const revalidate = 0;
+
 const builder = createImageUrlBuilder(client);
 interface Product {
   _id: string;
@@ -19,8 +20,6 @@ interface Product {
 }
 export default async function Products() {
   const products = await client.fetch(`*[_type == "product"]`);
-
-  const urlFor = (source: SanityImageSource) => builder.image(source).url();
   console.log(products);
   return (
     <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center ">
@@ -31,7 +30,9 @@ export default async function Products() {
           price={product.price}
           lastPrice={product.lastPrice ? product.lastPrice : ""}
           imgSrc={
-            product.mainImage ? urlFor(product.mainImage) : "/placeholder.jpg"
+            product.mainImage
+              ? urlFor(product.mainImage).url()
+              : "/placeholder.jpg"
           }
         />
       ))}
