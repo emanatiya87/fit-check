@@ -15,7 +15,7 @@ export default function FavouritePage() {
 
   return (
     <>
-      <Title titleText="Features" color="primary" />
+      <Title titleText="your Favourites" color="primary" />
       <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center">
         {favorites.length === 0 ? (
           <div className="text-center py-20 bg-gray-50 rounded-2xl">
