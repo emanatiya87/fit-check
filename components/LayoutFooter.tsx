@@ -9,9 +9,8 @@ export default function LayoutFooter() {
       style={{ backgroundImage: 'url("/footerbg.png")' }}
     >
       <div>
-        <Title titleText="اطلبي بسهولة على واتساب" color="secondary" />
+        <Title titleText="تواصلي معنا مباشرة" color="secondary" />
       </div>
-      <p className="mt-4 text-secondary font-semibold">تواصلي معنا مباشرة</p>
       <a
         href="https://wa.me/201113364852?text=hello%20Fit%20Check%20i%20want%20to%20order"
         target="_blank"
