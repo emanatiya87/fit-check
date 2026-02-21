@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeModeScript } from "flowbite-react";
 import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
+import { FavProvider } from "@/context/FavContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,11 +34,13 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body>
-        <div className="bg-background mt-0">
-          <LayoutHeader />
-          <LayoutNav />
-        </div>
-        {children}
+        <FavProvider>
+          <div className="bg-background mt-0">
+            <LayoutHeader />
+            <LayoutNav />
+          </div>
+          {children}
+        </FavProvider>
       </body>
     </html>
   );

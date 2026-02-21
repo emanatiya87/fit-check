@@ -4,7 +4,7 @@ import Link from "next/link";
 import { client, urlFor } from "@/lib/sanity";
 import { createImageUrlBuilder } from "@sanity/image-url";
 export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 30;
 const builder = createImageUrlBuilder(client);
 interface Product {
   _id: string;
@@ -42,6 +42,7 @@ export default async function Products() {
             className="w-1/2 sm:w-1/4 md:w-1/5 px-2 mb-3"
           >
             <CardComponent
+              _id={product._id}
               title={product.title}
               price={product.price}
               lastPrice={product.lastPeice ? product.lastPeice : ""}
