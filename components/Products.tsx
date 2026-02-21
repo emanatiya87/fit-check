@@ -7,7 +7,7 @@ interface Product {
   _id: string;
   title: string;
   price: string;
-  // lastPrice?: number;
+  lastPrice?: string;
   image?: any;
   mainImage?: {
     asset: {
@@ -23,13 +23,13 @@ export default async function Products() {
   const urlFor = (source: SanityImageSource) => builder.image(source).url();
   console.log(products);
   return (
-    <div className="w-[85vw] m-auto flex flex-wrap items-center content-center gap-4">
+    <div className="w-[85vw] m-auto flex flex-wrap items-center content-center ">
       {products.map((product: Product) => (
         <CardComponent
           key={product._id}
           title={product.title}
           price={product.price}
-          lastPrice="6"
+          lastPrice={product.lastPrice ? product.lastPrice : ""}
           imgSrc={
             product.mainImage ? urlFor(product.mainImage) : "/placeholder.jpg"
           }
