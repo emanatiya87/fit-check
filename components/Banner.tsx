@@ -1,11 +1,26 @@
+import Image from "next/image";
 export default function Banner() {
   return (
-    <div className="banner-bg pe-8 md:gap-20 flex items-center justify-start text-light w-full">
-      <img
-        src="/fanos.png"
+    <div className=" pe-8 md:gap-20 flex items-center justify-start text-light w-full relative overflow-hidden">
+      <Image
+        src="/bgBanner.png"
         alt="fanos ramadan"
-        className="max-h-full  w-1/3 self-start"
+        width={1000}
+        height={500}
+        priority
+        className="absolute h-dvh w-dvw -z-10"
       />
+      <div className="w-1/3 self-start relative">
+        <Image
+          src="/fanos.png"
+          alt="fanos ramadan"
+          width={500}
+          height={500}
+          priority
+          className="max-h-full w-full object-contain"
+        />
+      </div>
+
       <div className="flex flex-col items-center justify-center gap-2 md:gap-8 py-3">
         <p className="title-bg text-2xl md:text-5xl font-bold px-5 text-center">
           خصومات رمضان المميزة
@@ -15,7 +30,7 @@ export default function Banner() {
         </h2>
         <button
           type="button"
-          className="border-backgroung border-backgroung border bg-primary hover:bg-secondary focus:bg-secondary shadow-[0_7px_5px_-4px_var(--color-primary)]  text-white text-sm md:text-2xl bg-brand box-border  hover:bg-brand-strong  font-medium leading-5 rounded-full px-5 py-3 "
+          className="border-backgroung border bg-primary hover:bg-secondary focus:bg-secondary shadow-[0_7px_5px_-4px_var(--color-primary)] text-white text-sm md:text-2xl font-medium leading-5 rounded-full px-5 py-3"
         >
           تسوقي الان
         </button>
