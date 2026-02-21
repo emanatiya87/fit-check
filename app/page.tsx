@@ -1,8 +1,8 @@
-import Products from "@/components/Products";
+import Home from "@/components/Home";
 export default async function Page() {
   return (
     <>
-      <Products />
+      <Home />
     </>
   );
 }
