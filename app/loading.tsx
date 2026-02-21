@@ -9,7 +9,7 @@ export default function Loading() {
             className="w-64 animate-pulse-slow"
           />
 
-          <div className="w-32 h-[2px] bg-[#e8a8a0] overflow-hidden relative">
+          <div className="w-32 h-0.5 bg-[#e8a8a0] overflow-hidden relative">
             <div className="absolute inset-0 bg-[#ce7f73] animate-slide-left"></div>
           </div>
         </div>
