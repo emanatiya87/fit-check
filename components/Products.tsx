@@ -29,23 +29,20 @@ export default async function Products() {
   );
   console.log(products);
   return (
-    <>
-      <p>آخر تحديث للموقع: {new Date().toLocaleTimeString()}</p>
-      <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center ">
-        {products.map((product: Product) => (
-          <CardComponent
-            key={product._id}
-            title={product.title}
-            price={product.price}
-            lastPrice={product.lastPrice ? product.lastPrice : ""}
-            imgSrc={
-              product.mainImage
-                ? urlFor(product.mainImage).url()
-                : "/placeholder.jpg"
-            }
-          />
-        ))}
-      </div>
-    </>
+    <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center ">
+      {products.map((product: Product) => (
+        <CardComponent
+          key={product._id}
+          title={product.title}
+          price={product.price}
+          lastPrice={product.lastPrice ? product.lastPrice : ""}
+          imgSrc={
+            product.mainImage
+              ? urlFor(product.mainImage).url()
+              : "/placeholder.jpg"
+          }
+        />
+      ))}
+    </div>
   );
 }
