@@ -10,7 +10,7 @@ interface Product {
   _id: string;
   title: string;
   price: string;
-  lastPrice?: string;
+  lastPeice?: string;
   image?: any;
   mainImage?: {
     asset: {
@@ -44,7 +44,7 @@ export default async function Products() {
             <CardComponent
               title={product.title}
               price={product.price}
-              lastPrice={product.lastPrice ? product.lastPrice : ""}
+              lastPrice={product.lastPeice ? product.lastPeice : ""}
               imgSrc={
                 product.mainImage
                   ? urlFor(product.mainImage).url()
