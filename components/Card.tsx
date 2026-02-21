@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 export function CardComponent({
   imgSrc,
   title,
-  lastPrice,
+  lastPrice = "",
   price,
 }: {
   imgSrc: string;
@@ -29,7 +29,7 @@ export function CardComponent({
             <FaFire className="text-primary  " />
             Trending
           </div>
-          <h5 className="border-b-gray-300  border pb-2 border-t-0 border-x-0 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">
+          <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">
             {title}
           </h5>
           <div className="flex items-center justify-center">
@@ -37,7 +37,7 @@ export function CardComponent({
               {lastPrice}
             </span>
             <span className="text-md font-semibold text-gray-900 dark:text-white">
-              {price}
+              {price} LE
             </span>
           </div>
         </div>
