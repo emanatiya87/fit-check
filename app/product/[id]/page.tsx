@@ -27,13 +27,34 @@ export default async function ProductPage({
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl text-secondary">{product.title}</h1>
           <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-          <div className="flex items-center gap-4">
-            <span className="text-2xl  text-secondary">LE {product.price}</span>
-            {product.lastPeice && (
-              <span className="text-gray-400 line-through text-xl">
-                {product.lastPeice}
-              </span>
-            )}
+          <div className="flex flex-col gap-1">
+            {" "}
+            {/* حاوية للسعر عشان لو حبيتي تضيفي "شامل الضريبة" مثلاً */}
+            <div className="flex items-baseline gap-3">
+              {" "}
+              {/* items-baseline بتخلي الحروف على سطر واحد مهما اختلف حجم الخط */}
+              {/* السعر الحالي */}
+              <div className="flex items-center gap-1">
+                <span className="text-sm font-medium text-secondary">EGP</span>
+                <span className="text-4xl font-extrabold text-secondary tracking-tight">
+                  {product.price}
+                </span>
+              </div>
+              {/* السعر القديم ونسبة الخصم */}
+              {product.lastPeice && (
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 line-through text-lg decoration-red-400/50">
+                    {product.lastPeice}
+                  </span>
+
+                  {/* بادج الخصم - اختياري بس بيحفز جداً على الشراء */}
+                  <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                    وفرت {Number(product.lastPeice) - Number(product.price)}{" "}
+                    جنيه
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
           <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
           <p className="text-gray-600 text-lg leading-relaxed">
