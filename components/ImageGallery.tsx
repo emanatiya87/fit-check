@@ -34,7 +34,7 @@ export default function ImageGallery({ mainImage, gallery }: iAppProps) {
           {[mainImage, ...gallery].map((image, idx) => (
             <div
               key={idx}
-              className={`cursor-pointer overflow-hidden rounded-lg border-2 w-24 h-24 flex-shrink-0 transition ${
+              className={`cursor-pointer overflow-hidden rounded-lg border-2 w-24 h-24 shrink-0 transition ${
                 bigImage === image ? "border-purple-600" : "border-transparent"
               }`}
               onClick={() => handleImageClick(image)}
