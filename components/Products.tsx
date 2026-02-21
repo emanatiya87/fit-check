@@ -23,7 +23,7 @@ export default async function Products() {
   const urlFor = (source: SanityImageSource) => builder.image(source).url();
   console.log(products);
   return (
-    <div className="w-[85vw] m-auto flex flex-wrap items-center content-center ">
+    <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center ">
       {products.map((product: Product) => (
         <CardComponent
           key={product._id}

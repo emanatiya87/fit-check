@@ -14,12 +14,12 @@ export function CardComponent({
   return (
     <div className="w-1/2 sm:w-1/4 md:w-1/5 px-2 mb-3">
       <div className="block shadow-2xl rounded-2xl ">
-        <div className="overflow-hidden rounded-t-2xl relative">
+        <div className="overflow-hidden rounded-t-2xl relative text-center">
           <button className="absolute top-2 end-2 z-10 text-xl text-primary bg-gray-200 hover:bg-primary hover:text-gray-200 focus:bg-primary focus:text-gray-200 rounded-lg cursor-pointer ">
             <CiHeart />
           </button>
           <img
-            className="transition-transform duration-300 hover:scale-110"
+            className="transition-transform duration-300 hover:scale-110 max-h-50 m-auto"
             src={imgSrc}
             alt={title}
           />
