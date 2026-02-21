@@ -1,7 +1,8 @@
 import { client, urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
-import ImageGallery from "@/components/ImageGallery"; // تأكدي من المسار
+import ImageGallery from "@/components/ImageGallery";
+import { getColorCode } from "@/functions/colors";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
   const data = await client.fetch(query, {}, { next: { revalidate: 0 } });
@@ -15,9 +16,8 @@ export default async function ProductPage({
 }) {
   const { id } = await params;
   const product = await getProduct(id);
-
   if (!product) {
-    return <div className="text-center py-20">المنتج غير موجود</div>;
+    return <div className="text-center py-20 ">المنتج غير موجود</div>;
   }
 
   return (
@@ -25,12 +25,10 @@ export default async function ProductPage({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <ImageGallery mainImage={product.mainImage} gallery={product.gallery} />
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl font-bold text-secondary">{product.title}</h1>
+          <h1 className="text-2xl text-secondary">{product.title}</h1>
           <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
           <div className="flex items-center gap-4">
-            <span className="text-2xl font-bold text-secondary">
-              LE {product.price}
-            </span>
+            <span className="text-2xl  text-secondary">LE {product.price}</span>
             {product.lastPeice && (
               <span className="text-gray-400 line-through text-xl">
                 {product.lastPeice}
@@ -49,6 +47,25 @@ export default async function ProductPage({
                   {s}
                 </span>
               ))}
+            </div>
+          )}
+          {/* قسم الألوان المطور */}
+          {product.colors && (
+            <div className="flex flex-col gap-3 mt-4">
+              <span className="font-bold text-gray-700">الألوان المتاحة:</span>
+              <div className="flex gap-3">
+                {product.colors.map((color: string) => (
+                  <div key={color} className="group relative">
+                    <span
+                      className="block w-8 h-8 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 cursor-pointer hover:ring-secondary transition-all"
+                      style={{ backgroundColor: getColorCode(color) }}
+                    ></span>
+                    <span className="absolute -top-8 right-1/2 translate-x-1/2 bg-black text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      {color}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
           <a
