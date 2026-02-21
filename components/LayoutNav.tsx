@@ -13,7 +13,7 @@ export default function LayoutNav() {
         <span
           className={`text-secondary sm:text-lg ${pathname === "/" ? "font-semibold" : ""}`}
         >
-          About
+          Home
         </span>
       </Link>
 
