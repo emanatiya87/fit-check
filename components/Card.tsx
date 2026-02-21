@@ -37,7 +37,7 @@ export function CardComponent({
     ${
       liked
         ? "bg-red-500 text-white"
-        : "bg-gray-200 text-primary hover:bg-primary hover:text-gray-200" // الستايل العادي
+        : "bg-gray-200 text-primary hover:bg-primary hover:text-gray-200"
     }`}
         >
           {liked ? <FaHeart /> : <CiHeart />}
