@@ -5,6 +5,7 @@ import { ThemeModeScript } from "flowbite-react";
 import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
 import { FavProvider } from "@/context/FavContext";
+import { Contacts } from "@/components/Contacts";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
             <LayoutNav />
           </div>
           {children}
+          <Contacts />
         </FavProvider>
       </body>
     </html>

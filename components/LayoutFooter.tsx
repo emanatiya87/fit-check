@@ -21,14 +21,14 @@ export default function LayoutFooter() {
         <FaWhatsapp />
         اطلبي على الواتساب
       </a>
-      <a
+      {/* <a
         target="_blank"
         href="https://www.facebook.com/groups/750706561027930/?ref=share&mibextid=NSMWBT"
         className="w-fit mt-4 text-light bg-[#0064E0] border border-[#546E3C] 
              rounded-4xl font-semi-bold text-md px-5 py-2.5 flex items-center gap-1 m-auto"
       >
         <FaFacebook /> جروب
-      </a>
+      </a> */}
     </div>
   );
 }
