@@ -1,5 +1,4 @@
-import { client, urlFor } from "@/lib/sanity";
-import Image from "next/image";
+import { client } from "@/lib/sanity";
 import { FaWhatsapp } from "react-icons/fa";
 import ImageGallery from "@/components/ImageGallery";
 import { getColorCode } from "@/functions/colors";
@@ -22,6 +21,14 @@ export default async function ProductPage({
 
   return (
     <div className="w-[85vw] mx-auto py-6 text-right" dir="rtl">
+      {/* Breadcrumbs */}
+      <nav className="flex mb-4 text-sm text-gray-500 gap-2 items-center">
+        <a href="/" className="hover:text-secondary transition">
+          الرئيسية
+        </a>
+        <span>/</span>
+        <span className="text-secondary font-medium">{product.title}</span>
+      </nav>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <ImageGallery mainImage={product.mainImage} gallery={product.gallery} />
         <div className="flex flex-col gap-4">
@@ -93,7 +100,7 @@ export default async function ProductPage({
             href={`https://wa.me/201113364852?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit mt-4 text-light bg-[#546E3C] border border-[#546E3C] 
+            className="w-fit mt-4 text-light bg-[#546E3C] border border-[#546E3C]
                        rounded-4xl font-semi-bold text-md px-5 py-2.5 flex items-center gap-1 "
           >
             <FaWhatsapp />
