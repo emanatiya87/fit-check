@@ -5,7 +5,7 @@
 :root {
   --color-primary: #c27170;
   --color-secondary: #6f575e;
-  color-scheme: light;
+  color-scheme: light only; /* Force only light color scheme */
 }
 
 @theme {
@@ -13,16 +13,6 @@
   --color-secondary: #6f575e;
   --color-background: #fcf2f2;
   --color-light: #fdf4ff;
-}
-/* Optional: Override any dark mode classes */
-.dark {
-  color-scheme: light !important;
-}
-.dark * {
-  /* Force light theme colors */
-  --tw-bg-opacity: 1 !important;
-  background-color: transparent !important;
-  color: inherit !important;
 }
 body {
   @apply bg-white;
