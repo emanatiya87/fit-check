@@ -66,17 +66,17 @@ export default function PolicyPage() {
             </div>
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
-                <div className="w-2 h-2 mt-2 rounded-full bg-gray-300 flex-shrink-0"></div>
+                <div className="w-2 h-2 mt-2 rounded-full bg-gray-300 shrink-0"></div>
                 <p className="text-gray-600">
                   <span className="font-bold text-gray-800 italic">
                     فكة خياطة بسيطة:
                   </span>{" "}
-                  إذا كانت القطعة تحتاج خياطة بسيطة (تكلفة من ٥ لـ ١٠ جنيه)، يتم
+                  إذا كانت القطعة تحتاج خياطة بسيطة (تكلفة من 5 لـ 10 جنيه)، يتم
                   إصلاحها ومعوضتك بخصم التكلفة من أوردرك القادم فوراً.
                 </p>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-2 h-2 mt-2 rounded-full bg-gray-300 flex-shrink-0"></div>
+                <div className="w-2 h-2 mt-2 rounded-full bg-gray-300 shrink-0"></div>
                 <p className="text-gray-600">
                   <span className="font-bold text-gray-800 italic">
                     عيوب الطباعة الطفيفة:
