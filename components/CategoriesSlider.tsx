@@ -11,7 +11,7 @@ const categories = [
     href: "/dresses",
     image: "/dress.jpg",
     color: "from-pink-500/20",
-    items: "12+ items",
+    items: "15+ items",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const categories = [
     href: "/pants",
     image: "/pants.jpg",
     color: "from-purple-500/20",
-    items: "10+ items",
+    items: "3+ items",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const categories = [
     href: "/suits",
     image: "/Suit.jpg",
     color: "from-yellow-500/20",
-    items: "5+ items",
+    items: "3+ items",
   },
 ];
 // Import Swiper styles
