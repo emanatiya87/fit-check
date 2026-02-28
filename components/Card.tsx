@@ -53,7 +53,7 @@ export function CardComponent({
           <FaFire className="text-primary  " />
           Trending
         </div>
-        <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-md font-semibold tracking-tight text-gray-900 dark:text-white ">
+        <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-md font-semibold tracking-tight text-gray-900 ">
           {title}
         </h5>
         <div className="flex items-baseline gap-3" dir="rtl">
