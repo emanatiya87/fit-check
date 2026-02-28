@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 export function Contacts() {
   return (
-    <footer className="bg-white pt-16 pb-8 border-t border-gray-100" dir="rtl">
+    <footer className="  pt-16 pb-8 border-t border-gray-100" dir="rtl">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
         <div className="flex flex-col gap-4">
           <Image
@@ -12,7 +12,7 @@ export function Contacts() {
             height={10}
             alt="Picture of the author"
           />
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-200 text-sm leading-relaxed">
             اختيارك الأول للأناقة الرمضانية والملابس العصرية بجودة ممتازة وسعر
             يناسبك.
           </p>
@@ -47,23 +47,31 @@ export function Contacts() {
 
         {/* روابط سريعة */}
         <div>
-          <h3 className="font-bold text-secondary mb-6 text-lg">روابط تهمك</h3>
-          <ul className="flex flex-col gap-3 text-gray-500 text-sm">
+          <h3 className="font-bold text-secondary dark:text-primary mb-6 text-lg">
+            روابط تهمك
+          </h3>
+          <ul className="flex flex-col gap-3 text-gray-500 dark:text-gray-200  text-sm">
             <li>
-              <Link href="/" className="hover:text-secondary transition">
+              <Link
+                href="/"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
                 الرئيسية
               </Link>
             </li>
             <li>
               <Link
                 href="/favourit"
-                className="hover:text-secondary transition"
+                className="hover:text-secondary dark:hover:text-primary transition"
               >
                 المفضلة
               </Link>
             </li>
             <li>
-              <Link href="/replace" className="hover:text-secondary transition">
+              <Link
+                href="/replace"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
                 سياسة الاستبدال والاسترجاع
               </Link>
             </li>
@@ -71,7 +79,7 @@ export function Contacts() {
         </div>
         {/* الدفع */}
         <div>
-          <h3 className="font-bold text-secondary mb-6 text-lg">
+          <h3 className="font-bold text-secondary dark:text-primary mb-6 text-lg">
             طرق الدفع المتاحة
           </h3>
           <div className="flex flex-wrap items-center gap-4">
@@ -107,7 +115,7 @@ export function Contacts() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-gray-50 text-center">
-        <p className="text-xs text-gray-400">
+        <p className="text-xs text-gray-400 dark:text-gray-200 ">
           © 2026 جميع الحقوق محفوظة. صنع بكل حب لجمالك.
         </p>
       </div>

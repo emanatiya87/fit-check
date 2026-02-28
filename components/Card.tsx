@@ -58,8 +58,12 @@ export function CardComponent({
         </h5>
         <div className="flex items-baseline gap-3" dir="rtl">
           <div className="flex items-center gap-1">
-            <span className="text-sm font-medium text-secondary">EGP</span>
-            <span className="text-2xl font-bold text-secondary ">{price}</span>
+            <span className="text-sm font-medium text-secondary dark:text-primary">
+              EGP
+            </span>
+            <span className="text-2xl font-bold text-secondary dark:text-primary">
+              {price}
+            </span>
           </div>
           {lastPrice && (
             <span className="text-gray-400 line-through text-sm decoration-red-400/50">

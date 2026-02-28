@@ -14,6 +14,7 @@ export const getColorCode = (colorName: string): string => {
     أخضر: "#008000",
     ازرق: "#0000FF",
     بينك: "#FFC0CB",
+    هافان: "#3B2B2C",
   };
 
   // لو اللون مش موجود في القائمة، هيرجع لون رمادي فاتح كـ Default

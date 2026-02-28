@@ -17,13 +17,13 @@ export default function LayoutNav() {
         </span>
       </Link>
 
-      <Link href="/replace">
+      {/* <Link href="/replace">
         <span
           className={`text-secondary sm:text-lg ${pathname === "/replace" ? "font-semibold" : ""}`}
         >
           replace!
         </span>
-      </Link>
+      </Link> */}
 
       <Link href="/favourit">
         <span

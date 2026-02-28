@@ -9,7 +9,7 @@ export default function Features() {
           {/* Features Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {/* Free Shipping */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f1.png"
@@ -23,7 +23,7 @@ export default function Features() {
             </div>
 
             {/* Online Order */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f2.png"
@@ -37,7 +37,7 @@ export default function Features() {
             </div>
 
             {/* Happy Sell */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f5.png"
@@ -51,7 +51,7 @@ export default function Features() {
             </div>
 
             {/* Save Money */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f3.png"
@@ -65,7 +65,7 @@ export default function Features() {
             </div>
 
             {/* Giveaways */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f4.png"
@@ -79,7 +79,7 @@ export default function Features() {
             </div>
 
             {/* 24H Support */}
-            <div className="group border p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
+            <div className="group  border border-secondary p-4 mb-2 rounded-xl flex flex-col items-center transition-all hover:shadow-md">
               <div className="overflow-hidden mb-3">
                 <img
                   src="/features/f6.png"
