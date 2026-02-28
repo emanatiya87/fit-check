@@ -34,7 +34,7 @@ export default function ProductList({ products }: { products: any[] }) {
   return (
     <>
       <div className="flex justify-between items-center md:w-[85vw] w-[95%] m-auto px-3 mb-3">
-        <span>
+        <span className="text-secondary font-semibold">
           <Dropdown
             label={
               <div className="flex items-center gap-2">
@@ -52,8 +52,8 @@ export default function ProductList({ products }: { products: any[] }) {
             </DropdownItem>
           </Dropdown>
         </span>
-        <span>
-          <Dropdown label="Filter" inline className="z-30">
+        <span className="text-secondary font-semibold">
+          <Dropdown label="Filter" inline className="z-30 ">
             <DropdownItem onClick={() => filterCategory("dresses")}>
               Dresses
             </DropdownItem>

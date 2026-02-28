@@ -1,10 +1,10 @@
 export default function Newsletter() {
   return (
-    <section className="bg-[#020002] bg-linear-to-l from-[#4c535e] to-[#010205] py-12 px-6">
+    <section className=" py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Text Content */}
         <div className="text-center md:text-left">
-          <h2 className="text-white text-2xl md:text-3xl font-bold mb-2">
+          <h2 className="text-secondary text-2xl md:text-3xl font-bold mb-2">
             Sign Up for newsletters
           </h2>
           <p className="text-gray-400 text-sm md:text-base">
