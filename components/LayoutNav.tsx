@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiHeart } from "react-icons/ci";
-import { DarkThemeToggle } from "flowbite-react";
+// import { DarkThemeToggle } from "flowbite-react";
 export default function LayoutNav() {
   const pathname = usePathname();
 
@@ -32,7 +32,7 @@ export default function LayoutNav() {
           favourit <CiHeart />
         </span>
       </Link>
-      <DarkThemeToggle className="text-secondary " />
+      {/* <DarkThemeToggle className="text-secondary " /> */}
     </div>
   );
 }
