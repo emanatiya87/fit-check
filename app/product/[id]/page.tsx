@@ -33,7 +33,9 @@ export default async function ProductPage({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <ImageGallery mainImage={product.mainImage} gallery={product.gallery} />
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl text-secondary">{product.title}</h1>
+          <h1 className="text-2xl font-semibold text-secondary">
+            {product.title}
+          </h1>
           <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
           <div className="flex flex-col gap-1">
             {" "}
@@ -64,10 +66,22 @@ export default async function ProductPage({
               )}
             </div>
           </div>
-          <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-          <p className="text-gray-600 text-lg leading-relaxed">
-            {product.description || ""}
-          </p>
+          {product.description && (
+            <>
+              <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+              <p className="text-gray-700 text-md leading-relaxed">
+                {product.description}
+              </p>
+            </>
+          )}
+          {product.material && (
+            <div>
+              <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+              <h3 className="text-gray-700 text-md leading-relaxed">
+                الخامه : <span> {product.material}</span>
+              </h3>{" "}
+            </div>
+          )}
           {product.sizes && (
             <div className="flex gap-2 items-center">
               <span className="font-bold">المقاسات:</span>
