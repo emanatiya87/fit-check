@@ -12,7 +12,7 @@ export default function ProductList({
   appearFilter = false,
 }: {
   products: any[];
-  appearFilter: boolean;
+  appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
 
