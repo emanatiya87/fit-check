@@ -10,14 +10,14 @@ import { urlFor } from "@/lib/sanity";
 export default function ProductList({ products }: { products: any[] }) {
   const [viewedProducts, setViewedProducts] = useState(products);
 
-  const filterCategory = (category: string) => {
-    if (category === "all") {
-      setViewedProducts(products);
-    } else {
-      const filtered = products.filter((p) => p.category === category);
-      setViewedProducts(filtered);
-    }
-  };
+  // const filterCategory = (category: string) => {
+  //   if (category === "all") {
+  //     setViewedProducts(products);
+  //   } else {
+  //     const filtered = products.filter((p) => p.category === category);
+  //     setViewedProducts(filtered);
+  //   }
+  // };
   const sortProducts = (order: "high-to-low" | "low-to-high") => {
     const sorted = [...viewedProducts].sort((a, b) => {
       const priceA = parseFloat(a.price);
@@ -52,7 +52,7 @@ export default function ProductList({ products }: { products: any[] }) {
             </DropdownItem>
           </Dropdown>
         </span>
-        <span className="text-secondary font-semibold">
+        {/* <span className="text-secondary font-semibold">
           <Dropdown label="Filter" inline className="z-30 ">
             <DropdownItem onClick={() => filterCategory("dresses")}>
               Dresses
@@ -67,7 +67,7 @@ export default function ProductList({ products }: { products: any[] }) {
               All
             </DropdownItem>
           </Dropdown>
-        </span>
+        </span> */}
       </div>
 
       <div className="md:w-[85vw] w-[95%] m-auto flex flex-wrap items-start justify-center ">

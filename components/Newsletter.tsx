@@ -18,18 +18,18 @@ export default function Newsletter() {
           <form
             action="https://formspree.io/f/mqedjvgn"
             method="POST"
-            className="flex w-full max-w-md bg-white rounded-lg overflow-hidden p-1 shadow-lg"
+            className="flex flex-col sm:flex-row w-full max-w-md bg-white rounded-lg overflow-hidden p-1 shadow-lg gap-2"
           >
             <input
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="grow px-4 py-3 outline-none text-gray-700 text-sm border-none focus:ring-0"
+              className="grow px-4 py-3 outline-none text-gray-700 text-sm border-none focus:ring-0 w-full"
               required
             />
             <button
               type="submit"
-              className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-md font-semibold transition-colors duration-300 whitespace-nowrap"
+              className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-md font-semibold transition-colors duration-300 whitespace-nowrap w-full sm:w-auto"
             >
               Sign Up
             </button>

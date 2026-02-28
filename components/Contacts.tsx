@@ -77,6 +77,46 @@ export function Contacts() {
             </li>
           </ul>
         </div>
+        {/* روابط سريعة */}
+        <div>
+          <h3 className="font-bold text-secondary dark:text-primary mb-6 text-lg">
+            منتجاتنا
+          </h3>
+          <ul className="flex flex-col gap-3 text-gray-500 text-sm">
+            <li>
+              <Link
+                href="/dresses"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                الفساتين
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/tops"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                التيشيرتات
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pants"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                البناطيل
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/suits"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                البدل
+              </Link>
+            </li>
+          </ul>
+        </div>
         {/* الدفع */}
         <div>
           <h3 className="font-bold text-secondary dark:text-primary mb-6 text-lg">
