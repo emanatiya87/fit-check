@@ -53,16 +53,19 @@ export function CardComponent({
           <FaFire className="text-primary  " />
           Trending
         </div>
-        <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">
+        <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-md font-semibold tracking-tight text-gray-900 dark:text-white ">
           {title}
         </h5>
-        <div className="flex items-center justify-center">
-          <span className="me-2 text-md text-gray-500 line-through dark:text-white">
-            {lastPrice}
-          </span>
-          <span className="text-md font-semibold text-gray-900 dark:text-white">
-            {price} LE
-          </span>
+        <div className="flex items-baseline gap-3" dir="rtl">
+          <div className="flex items-center gap-1">
+            <span className="text-sm font-medium text-secondary">EGP</span>
+            <span className="text-2xl font-bold text-secondary ">{price}</span>
+          </div>
+          {lastPrice && (
+            <span className="text-gray-400 line-through text-sm decoration-red-400/50">
+              {lastPrice}
+            </span>
+          )}
         </div>
       </div>
     </div>
