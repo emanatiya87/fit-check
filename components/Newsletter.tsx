@@ -16,13 +16,13 @@ export default function Newsletter() {
         {/* Form - Powered by Formspree */}
         <div className="w-full md:w-auto flex justify-center items-center">
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID" // استبدل YOUR_FORM_ID بالكود اللي هتاخده من الموقع
+            action="https://formspree.io/f/mqedjvgn"
             method="POST"
             className="flex w-full max-w-md bg-white rounded-lg overflow-hidden p-1 shadow-lg"
           >
             <input
               type="email"
-              name="email" // مهم جداً عشان Formspree يعرف الداتا
+              name="email"
               placeholder="Enter your email"
               className="grow px-4 py-3 outline-none text-gray-700 text-sm border-none focus:ring-0"
               required
