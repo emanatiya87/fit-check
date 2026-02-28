@@ -12,7 +12,7 @@ export default async function Products() {
 
   return (
     <>
-      <Title titleText="Features" color="primary" />
+      <Title titleText="Our Products" color="primary" />
       <ProductList products={products} />
     </>
   );
