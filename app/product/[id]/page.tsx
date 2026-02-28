@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity";
 import { FaWhatsapp } from "react-icons/fa";
 import ImageGallery from "@/components/ImageGallery";
 import { getColorCode } from "@/functions/colors";
+import Link from "next/link";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
   const data = await client.fetch(query, {}, { next: { revalidate: 0 } });
@@ -43,7 +44,7 @@ export default async function ProductPage({
               {/* السعر الحالي */}
               <div className="flex items-center gap-1">
                 <span className="text-sm font-medium text-secondary">EGP</span>
-                <span className="text-4xl font-extrabold text-secondary tracking-tight">
+                <span className="text-4xl font-bold text-secondary tracking-tight">
                   {product.price}
                 </span>
               </div>
@@ -96,16 +97,18 @@ export default async function ProductPage({
               </div>
             </div>
           )}
-          <a
+          <Link
             href={`https://wa.me/201113364852?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit mt-4 text-light bg-[#546E3C] border border-[#546E3C]
-                       rounded-4xl font-semi-bold text-md px-5 py-2.5 flex items-center gap-1 "
+            className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
+             hover:bg-[#25D366] hover:text-white hover:border-[#25D366]
+             rounded-full font-semibold text-md px-5 py-2.5 
+             flex items-center gap-2 m-auto transition-all duration-300"
           >
-            <FaWhatsapp />
+            <FaWhatsapp className="text-xl" />
             اطلبي على الواتساب
-          </a>
+          </Link>
         </div>
       </div>
     </div>
