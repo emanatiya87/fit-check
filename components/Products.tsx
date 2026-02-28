@@ -34,7 +34,7 @@ export default async function Products() {
     <>
       <Title titleText="Features" color="primary" />
 
-      <div className="w-[85vw] m-auto flex flex-wrap items-start justify-center ">
+      <div className="md:w-[85vw] w-[95%] m-auto flex flex-wrap items-start justify-center ">
         {products.map((product: Product) => (
           <Link
             href={`/product/${product._id}`}

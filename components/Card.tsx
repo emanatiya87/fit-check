@@ -29,8 +29,8 @@ export function CardComponent({
     }
   };
   return (
-    <div className="block shadow-2xl rounded-2xl dark:border dark:border-background">
-      <div className="overflow-hidden rounded-t-2xl relative text-center">
+    <div className="block shadow-2xl  dark:border dark:border-background">
+      <div className="overflow-hidden  relative text-center">
         <button
           onClick={toggleFav}
           className={`absolute top-2 end-2 z-10 text-xl rounded-lg cursor-pointer transition-colors duration-300 p-1

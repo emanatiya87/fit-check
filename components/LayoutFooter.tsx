@@ -1,6 +1,6 @@
 import Title from "./title";
 import { FaWhatsapp } from "react-icons/fa";
-
+import Link from "next/link";
 export default function LayoutFooter() {
   return (
     <div
@@ -10,16 +10,18 @@ export default function LayoutFooter() {
       <div>
         <Title titleText="تواصلي معنا مباشرة" color="secondary" />
       </div>
-      <a
+      <Link
         href="https://wa.me/201113364852?text=hello%20Fit%20Check%20i%20want%20to%20order"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-fit mt-4 text-light bg-[#546E3C] border border-[#546E3C] 
-             rounded-4xl font-semi-bold text-md px-5 py-2.5 flex items-center gap-1 m-auto"
+        className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
+             hover:bg-[#25D366] hover:text-white hover:border-[#25D366]
+             rounded-full font-semibold text-md px-5 py-2.5 
+             flex items-center gap-2 m-auto transition-all duration-300"
       >
-        <FaWhatsapp />
+        <FaWhatsapp className="text-xl" />
         اطلبي على الواتساب
-      </a>
+      </Link>
     </div>
   );
 }
