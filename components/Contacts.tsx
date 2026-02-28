@@ -12,7 +12,7 @@ export function Contacts() {
             height={10}
             alt="Picture of the author"
           />
-          <p className="text-gray-500 dark:text-gray-200 text-sm leading-relaxed">
+          <p className="text-gray-500 text-sm leading-relaxed">
             اختيارك الأول للأناقة الرمضانية والملابس العصرية بجودة ممتازة وسعر
             يناسبك.
           </p>
@@ -50,7 +50,7 @@ export function Contacts() {
           <h3 className="font-bold text-secondary dark:text-primary mb-6 text-lg">
             روابط تهمك
           </h3>
-          <ul className="flex flex-col gap-3 text-gray-500 dark:text-gray-200  text-sm">
+          <ul className="flex flex-col gap-3 text-gray-500 text-sm">
             <li>
               <Link
                 href="/"
@@ -115,7 +115,7 @@ export function Contacts() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-gray-50 text-center">
-        <p className="text-xs text-gray-400 dark:text-gray-200 ">
+        <p className="text-xs text-gray-400  ">
           © 2026 جميع الحقوق محفوظة. صنع بكل حب لجمالك.
         </p>
       </div>

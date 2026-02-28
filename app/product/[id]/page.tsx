@@ -23,7 +23,7 @@ export default async function ProductPage({
   return (
     <div className="w-[85vw] mx-auto py-6 text-right" dir="rtl">
       {/* Breadcrumbs */}
-      <nav className="flex mb-4 text-sm text-gray-500  dark:text-gray-200  gap-2 items-center">
+      <nav className="flex mb-4 text-sm text-gray-500  gap-2 items-center">
         <a
           href="/"
           className="hover:text-secondary dark:hover:text-primary transition"
@@ -60,7 +60,7 @@ export default async function ProductPage({
               {/* السعر القديم ونسبة الخصم */}
               {product.lastPeice && (
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400  dark:text-gray-300  line-through text-lg decoration-red-400/50">
+                  <span className="text-gray-400 line-through text-lg decoration-red-400/50">
                     {product.lastPeice}
                   </span>
 
@@ -76,7 +76,7 @@ export default async function ProductPage({
           {product.description && (
             <>
               <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-              <p className="text-gray-700 dark:text-gray-200 text-md leading-relaxed">
+              <p className="text-gray-700 text-md leading-relaxed">
                 {product.description}
               </p>
             </>
@@ -84,20 +84,18 @@ export default async function ProductPage({
           {product.material && (
             <div>
               <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-              <h3 className="font-bold  text-gray-700 dark:text-gray-200 text-md leading-relaxed">
+              <h3 className="font-bold  text-gray-700 text-md leading-relaxed">
                 الخامه : <span> {product.material}</span>
               </h3>{" "}
             </div>
           )}
           {product.sizes && (
             <div className="flex gap-2 items-center">
-              <span className="font-bold text-gray-700 dark:text-gray-200">
-                المقاسات:
-              </span>
+              <span className="font-bold text-gray-700">المقاسات:</span>
               {product.sizes.map((s: string) => (
                 <span
                   key={s}
-                  className="px-3 py-1 border rounded text-gray-700 dark:text-gray-200"
+                  className="px-3 py-1 border rounded text-gray-700"
                 >
                   {s}
                 </span>
@@ -107,9 +105,7 @@ export default async function ProductPage({
           {/* قسم الألوان المطور */}
           {product.colors && (
             <div className="flex flex-col gap-3 mt-4">
-              <span className="font-bold text-gray-700  dark:text-gray-200 ">
-                الألوان المتاحة:
-              </span>
+              <span className="font-bold text-gray-700">الألوان المتاحة:</span>
               <div className="flex gap-3">
                 {product.colors.map((color: string) => (
                   <div key={color} className="group relative">
