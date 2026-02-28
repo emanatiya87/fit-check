@@ -40,7 +40,7 @@ export default function ProductList({
   return (
     <>
       <div
-        className="flex justify-between items-center md:w-[85vw] w-[95%] m-auto px-3 mb-3"
+        className="flex justify-between items-center md:w-[85vw] w-[95%] m-auto px-3 mb-3 my-3"
         dir="rtl"
       >
         <span className="text-secondary font-semibold">
