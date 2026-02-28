@@ -6,6 +6,7 @@ import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
 import { FavProvider } from "@/context/FavContext";
 import { Contacts } from "@/components/Contacts";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,11 +31,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning data-mode="light">
       <head>
-        <ThemeModeScript />
+        {/* Configure ThemeModeScript to force light mode */}
+        <ThemeModeScript mode="light" />
+        {/* Alternative: Add inline script to force light mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                localStorage.setItem('flowbite-theme-mode', 'light');
+                document.documentElement.classList.remove('dark');
+                document.documentElement.style.colorScheme = 'light';
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body>
+      <body className="bg-background text-gray-900">
         <FavProvider>
           <div className="bg-background mt-0">
             <LayoutHeader />

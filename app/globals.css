@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 :root {
   --color-primary: #c27170;
   --color-secondary: #6f575e;
+  color-scheme: light;
 }
 
 @theme {
@@ -13,8 +14,18 @@
   --color-background: #fcf2f2;
   --color-light: #fdf4ff;
 }
+/* Optional: Override any dark mode classes */
+.dark {
+  color-scheme: light !important;
+}
+.dark * {
+  /* Force light theme colors */
+  --tw-bg-opacity: 1 !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}
 body {
-  @apply bg-white dark:bg-gray-900;
+  @apply bg-white;
 }
 
 .textStyle {
