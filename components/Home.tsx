@@ -4,6 +4,7 @@ import LayoutFooter from "./LayoutFooter";
 import Products from "./Products";
 import ProductSkeleton from "./ProductSkeleton";
 import Features from "./features";
+import Newsletter from "./Newsletter";
 export default function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Home() {
       </Suspense>
       <Features />
       <LayoutFooter />
+      <Newsletter />
     </>
   );
 }
