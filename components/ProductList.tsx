@@ -7,17 +7,23 @@ import { Dropdown, DropdownItem } from "flowbite-react";
 import { TbArrowsSort } from "react-icons/tb";
 import { urlFor } from "@/lib/sanity";
 
-export default function ProductList({ products }: { products: any[] }) {
+export default function ProductList({
+  products,
+  appearFilter = false,
+}: {
+  products: any[];
+  appearFilter: boolean;
+}) {
   const [viewedProducts, setViewedProducts] = useState(products);
 
-  // const filterCategory = (category: string) => {
-  //   if (category === "all") {
-  //     setViewedProducts(products);
-  //   } else {
-  //     const filtered = products.filter((p) => p.category === category);
-  //     setViewedProducts(filtered);
-  //   }
-  // };
+  const filterCategory = (category: string) => {
+    if (category === "all") {
+      setViewedProducts(products);
+    } else {
+      const filtered = products.filter((p) => p.category === category);
+      setViewedProducts(filtered);
+    }
+  };
   const sortProducts = (order: "high-to-low" | "low-to-high") => {
     const sorted = [...viewedProducts].sort((a, b) => {
       const priceA = parseFloat(a.price);
@@ -33,7 +39,10 @@ export default function ProductList({ products }: { products: any[] }) {
   };
   return (
     <>
-      <div className="flex justify-between items-center md:w-[85vw] w-[95%] m-auto px-3 mb-3">
+      <div
+        className="flex justify-between items-center md:w-[85vw] w-[95%] m-auto px-3 mb-3"
+        dir="rtl"
+      >
         <span className="text-secondary font-semibold">
           <Dropdown
             label={
@@ -52,22 +61,24 @@ export default function ProductList({ products }: { products: any[] }) {
             </DropdownItem>
           </Dropdown>
         </span>
-        {/* <span className="text-secondary font-semibold">
-          <Dropdown label="Filter" inline className="z-30 ">
-            <DropdownItem onClick={() => filterCategory("dresses")}>
-              Dresses
-            </DropdownItem>
-            <DropdownItem onClick={() => filterCategory("tshirts")}>
-              Tops
-            </DropdownItem>
-            <DropdownItem onClick={() => filterCategory("pants")}>
-              Pants
-            </DropdownItem>
-            <DropdownItem onClick={() => filterCategory("all")}>
-              All
-            </DropdownItem>
-          </Dropdown>
-        </span> */}
+        {appearFilter && (
+          <span className="text-secondary font-semibold">
+            <Dropdown label="Filter" inline className="z-30 ">
+              <DropdownItem onClick={() => filterCategory("dresses")}>
+                Dresses
+              </DropdownItem>
+              <DropdownItem onClick={() => filterCategory("tshirts")}>
+                Tops
+              </DropdownItem>
+              <DropdownItem onClick={() => filterCategory("pants")}>
+                Pants
+              </DropdownItem>
+              <DropdownItem onClick={() => filterCategory("all")}>
+                All
+              </DropdownItem>
+            </Dropdown>
+          </span>
+        )}
       </div>
 
       <div className="md:w-[85vw] w-[95%] m-auto flex flex-wrap items-start justify-center ">
