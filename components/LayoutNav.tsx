@@ -29,7 +29,7 @@ export default function LayoutNav() {
         <span
           className={`text-secondary sm:text-lg flex items-center gap-1 ${pathname === "/favourit" ? "font-semibold" : ""}`}
         >
-          favourit <CiHeart />
+          favourite <CiHeart />
         </span>
       </Link>
       {/* <DarkThemeToggle className="text-secondary " /> */}
