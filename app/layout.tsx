@@ -7,6 +7,7 @@ import LayoutNav from "@/components/LayoutNav";
 import { FavProvider } from "@/context/FavContext";
 import { Contacts } from "@/components/Contacts";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import LayoutClient from "@/components/layoutCLient";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-gray-900">
         <FavProvider>
+          <LayoutClient />
           <div className="bg-background mt-0">
             <LayoutHeader />
             <LayoutNav />
