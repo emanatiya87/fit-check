@@ -6,7 +6,7 @@ import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
 import { FavProvider } from "@/context/FavContext";
 import { Contacts } from "@/components/Contacts";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -57,6 +57,7 @@ export default function RootLayout({
           {children}
           <Contacts />
         </FavProvider>
+        <GoogleAnalytics gaId="G-64Q539S7S7" />
       </body>
     </html>
   );
