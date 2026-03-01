@@ -18,7 +18,7 @@ export function Contacts() {
           </p>
           <div className="flex gap-3 mt-2 flex-wrap">
             <Link
-              href="#"
+              href="https://www.instagram.com/fitcheck.justclick/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 bg-gray-100 rounded-full text-[#ee2a7b] transition-all duration-300 
