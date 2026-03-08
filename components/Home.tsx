@@ -6,6 +6,7 @@ import ProductSkeleton from "./ProductSkeleton";
 import Features from "./features";
 import Newsletter from "./Newsletter";
 import CategoriesSlider from "./CategoriesSlider";
+import LoadingSlider from "./loadingSlider";
 export default function Home() {
   return (
     <>
@@ -13,7 +14,9 @@ export default function Home() {
       <Suspense fallback={<ProductSkeleton />}>
         <Products />
       </Suspense>
-      <CategoriesSlider />
+      <Suspense fallback={<LoadingSlider />}>
+        <CategoriesSlider />
+      </Suspense>
       <Features />
       <LayoutFooter />
       <Newsletter />
