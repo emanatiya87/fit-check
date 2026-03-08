@@ -30,7 +30,7 @@ export function CardComponent({
   };
   return (
     <div className="block shadow-2xl  dark:border dark:border-background">
-      <div className="overflow-hidden  relative text-center">
+      <div className="overflow-hidden relative text-center h-52 flex items-center justify-center">
         <button
           onClick={toggleFav}
           className={`absolute top-2 end-2 z-10 text-xl rounded-lg cursor-pointer transition-colors duration-300 p-1
@@ -43,7 +43,7 @@ export function CardComponent({
           {liked ? <FaHeart /> : <CiHeart />}
         </button>
         <img
-          className="transition-transform duration-300 hover:scale-110 max-h-50 m-auto"
+          className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-110"
           src={imgSrc}
           alt={title}
         />
@@ -53,7 +53,7 @@ export function CardComponent({
           <FaFire className="text-primary  " />
           Trending
         </div>
-        <h5 className="border-b-gray-300  w-full border pb-2 border-t-0 border-x-0 text-md font-semibold tracking-tight text-gray-900 ">
+        <h5 className="w-full border-b border-gray-300 pb-2 text-md font-semibold tracking-tight text-gray-900 line-clamp-2 min-h-[48px]">
           {title}
         </h5>
         <div className="flex items-baseline gap-3" dir="rtl">
