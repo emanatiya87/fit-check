@@ -106,14 +106,23 @@ export default async function ProductPage({
           {product.colors && (
             <div className="flex flex-col gap-3 mt-4">
               <span className="font-bold text-gray-700">الألوان المتاحة:</span>
-              <div className="flex gap-3">
+              <div className="flex gap-3 mt-8">
                 {product.colors.map((color: string) => (
-                  <div key={color} className="group relative">
+                  <div
+                    key={color}
+                    className="group relative flex flex-col items-center"
+                  >
+                    {/* الدائرة */}
                     <span
                       className="block w-8 h-8 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 cursor-pointer hover:ring-secondary transition-all"
                       style={{ backgroundColor: getColorCode(color) }}
                     ></span>
-                    <span className="absolute -top-8 right-1/2 translate-x-1/2 bg-black text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+
+                    {/* Tooltip */}
+                    <span
+                      className="absolute -top-8 text-center bg-gray-600 text-white text-[10px] px-2 py-1 rounded 
+            opacity-100 md:opacity-0 group-hover:md:opacity-100 transition-opacity whitespace-nowrap"
+                    >
                       {color}
                     </span>
                   </div>

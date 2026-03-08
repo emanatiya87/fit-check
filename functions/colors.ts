@@ -7,6 +7,7 @@ export const getColorCode = (colorName: string): string => {
     بيج: "#EDE8D0",
     كحلي: "#000080",
     رمادي: "#808080",
+    رصاصي: "#808080",
     بني: "#964B00",
     موف: "#800080",
     لافندر: "#9D9DCC",
