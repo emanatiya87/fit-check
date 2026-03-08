@@ -71,7 +71,7 @@ export default function CategoriesSliderAutoSnap() {
   }, [cardsPerView]);
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8">
+    <section className="px-4 sm:px-6 lg:px-8 md:w-[85vw] w-[95%] m-auto ">
       <Title titleText="All Categories" color="primary" />
       <div
         ref={sliderRef}
