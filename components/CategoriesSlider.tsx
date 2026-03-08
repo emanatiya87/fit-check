@@ -37,40 +37,50 @@ const categories = [
   },
 ];
 
-export default function CategoriesSliderAuto() {
+export default function CategoriesSliderAutoSnap() {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [cardsPerView, setCardsPerView] = useState(4);
 
-  // Auto scroll
+  // responsive
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setCardsPerView(2);
+      else setCardsPerView(4);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    let scrollAmount = 0;
-    const scrollStep = 1; // pixels per interval
+    let currentIndex = 0;
+    const totalSlides = Math.ceil(categories.length / cardsPerView);
+
     const interval = setInterval(() => {
-      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-        slider.scrollLeft = 0; // loop back
-        scrollAmount = 0;
-      } else {
-        slider.scrollLeft += scrollStep;
-        scrollAmount += scrollStep;
-      }
-    }, 10); // speed control
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slider.scrollTo({
+        left: slider.scrollWidth * (currentIndex / totalSlides),
+        behavior: "smooth",
+      });
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [cardsPerView]);
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
       <Title titleText="All Categories" color="primary" />
       <div
         ref={sliderRef}
-        className="overflow-x-auto flex gap-4 py-4 scroll-smooth snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+        className="flex overflow-x-auto gap-4 py-4 scroll-smooth snap-x snap-mandatory cursor-grab active:cursor-grabbing"
       >
         {categories.map((category) => (
           <div
             key={category.id}
-            className="shrink-0 w-1/2 sm:w-1/2 md:w-1/4 lg:w-1/4 snap-start"
+            className="flex-shrink-0 w-1/2 sm:w-1/2 md:w-1/4 lg:w-1/4 snap-start"
           >
             <Link href={category.href}>
               <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden bg-gray-100">
