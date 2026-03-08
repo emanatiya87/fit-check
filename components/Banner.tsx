@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className=" pe-8 md:gap-20 flex items-center justify-start text-light w-full relative overflow-hidden">
       <Image
-        src="/bgBanner.png"
+        src="/bgBanner.webp"
         alt="fanos ramadan"
         width={1000}
         height={500}
@@ -13,7 +13,7 @@ export default function Banner() {
       />
       <div className="w-1/3 self-start relative">
         <Image
-          src="/fanos.png"
+          src="/fanos.webp"
           alt="fanos ramadan"
           width={500}
           height={500}

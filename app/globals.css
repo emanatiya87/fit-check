@@ -25,14 +25,14 @@ body {
   @apply text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white text-xl;
 }
 .title-bg {
-  background-image: url("/brush.png");
+  background-image: url("/brush.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: inline-block;
 }
 .banner-bg {
-  background-image: url("/bgBanner.png");
+  background-image: url("/bgBanner.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
