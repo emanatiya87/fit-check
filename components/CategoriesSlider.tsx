@@ -80,7 +80,7 @@ export default function CategoriesSliderAutoSnap() {
         {categories.map((category) => (
           <div
             key={category.id}
-            className="flex-shrink-0 w-1/2 sm:w-1/2 md:w-1/4 lg:w-1/4 snap-start"
+            className="shrink-0 w-1/2 sm:w-1/2 md:w-1/4 lg:w-1/4 snap-start"
           >
             <Link href={category.href}>
               <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden bg-gray-100">
