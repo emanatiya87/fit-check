@@ -6,7 +6,7 @@ export default async function Suits() {
   const products = await client.fetch(
     `*[_type == "product"]`,
     {},
-    { next: { revalidate: 0 } },
+    { next: { revalidate: 30 } },
   );
   let filtered = products.filter((p: any) => p.category === "suits");
   return (

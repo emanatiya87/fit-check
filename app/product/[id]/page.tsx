@@ -2,10 +2,11 @@ import { client } from "@/lib/sanity";
 import { FaWhatsapp } from "react-icons/fa";
 import ImageGallery from "@/components/ImageGallery";
 import { getColorCode } from "@/functions/colors";
+import { resolveCategory } from "@/functions/resolveCategory";
 import Link from "next/link";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
-  const data = await client.fetch(query, {}, { next: { revalidate: 0 } });
+  const data = await client.fetch(query, {}, { next: { revalidate: 30 } });
   return data;
 }
 
@@ -16,6 +17,7 @@ export default async function ProductPage({
 }) {
   const { id } = await params;
   const product = await getProduct(id);
+  const { route, label } = resolveCategory(product.category);
   if (!product) {
     return <div className="text-center py-20 ">المنتج غير موجود</div>;
   }
@@ -30,6 +32,10 @@ export default async function ProductPage({
         >
           الرئيسية
         </a>
+        <span>/</span>
+        <Link href={`/${route}`} className="hover:text-secondary">
+          {label}
+        </Link>
         <span>/</span>
         <span className="text-secondary  dark:text-primary font-medium">
           {product.title}
