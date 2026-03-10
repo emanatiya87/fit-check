@@ -6,6 +6,11 @@ import { useState } from "react";
 import { FaGripLines } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoHome } from "react-icons/io5";
+
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 export default function SidebarNav() {
   const pathname = usePathname();
@@ -25,13 +30,20 @@ export default function SidebarNav() {
     <>
       {/* Toggle Button for Mobile */}
       <div className="flex justify-between gap-6 items-center py-1 px-4 ">
-        <Link href="/">
-          <span
-            className={`text-secondary text-2xl flex items-center gap-1 ${pathname === "/" ? "font-semibold" : ""}`}
-          >
-            <FaHome />
-          </span>
-        </Link>
+        <div className="flex gap-3">
+          <Link href="/">
+            <span className="text-secondary text-2xl flex items-center gap-1 ">
+              {pathname === "/" ? <IoHome /> : <IoHomeOutline />}
+            </span>
+          </Link>
+          <Link href="/favourit">
+            <span
+              className={`text-secondary text-2xl flex items-center gap-1 `}
+            >
+              {pathname === "/favourit" ? <FaHeart /> : <FaRegHeart />}
+            </span>
+          </Link>
+        </div>
         {!isOpen && (
           <button
             onClick={() => setIsOpen(!isOpen)}
