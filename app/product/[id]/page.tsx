@@ -117,7 +117,7 @@ export default async function ProductPage({
                 {product.colors.map((color: string) => (
                   <div
                     key={color}
-                    className="group relative flex flex-col items-center"
+                    className="group relative flex flex-col items-center mb-6"
                   >
                     {/* الدائرة */}
                     <span
