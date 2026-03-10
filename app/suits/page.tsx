@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity";
 import ProductList from "@/components/ProductList";
 export const dynamic = "force-dynamic";
 import CategoriesSlider from "@/components/CategoriesSlider";
+import Title from "@/components/title";
 export default async function Suits() {
   const products = await client.fetch(
     `*[_type == "product"]`,
@@ -11,6 +12,8 @@ export default async function Suits() {
   let filtered = products.filter((p: any) => p.category === "suits");
   return (
     <>
+      <Title titleText="Suits" color="primary" />
+
       <ProductList products={filtered} />
       <CategoriesSlider />
     </>
