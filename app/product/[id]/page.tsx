@@ -4,6 +4,7 @@ import ImageGallery from "@/components/ImageGallery";
 import { getColorCode } from "@/functions/colors";
 import { resolveCategory } from "@/functions/resolveCategory";
 import Link from "next/link";
+import { phoneNumer } from "@/constants/number";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
   const data = await client.fetch(query, {}, { next: { revalidate: 30 } });
@@ -137,7 +138,7 @@ export default async function ProductPage({
             </div>
           )}
           <Link
-            href={`https://wa.me/201113364852?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
+            href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200

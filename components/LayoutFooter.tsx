@@ -1,6 +1,7 @@
 import Title from "./title";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import { phoneNumer } from "@/constants/number";
 export default function LayoutFooter() {
   return (
     <div
@@ -11,7 +12,7 @@ export default function LayoutFooter() {
         <Title titleText="تواصلي معنا مباشرة" color="secondary" />
       </div>
       <Link
-        href="https://wa.me/201113364852?text=hello%20Fit%20Check%20i%20want%20to%20order"
+        href={`https://wa.me/${phoneNumer}?text=Hello%20Fit%20Check%20I%20want%20to%20order`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200

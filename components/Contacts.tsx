@@ -1,6 +1,7 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { phoneNumer } from "@/constants/number";
 export function Contacts() {
   return (
     <footer className="  pt-16 pb-8 border-t border-gray-100" dir="rtl">
@@ -37,7 +38,7 @@ export function Contacts() {
             </Link>
             <Link
               target="_blank"
-              href="https://wa.me/201113364852?text=hello%20Fit%20Check%20i%20want%20to%20order"
+              href={`https://wa.me/${phoneNumer}?text=Hello%20Fit%20Check%20I%20want%20to%20order`}
               className="p-2 bg-gray-100 rounded-full text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors duration-300"
             >
               <FaWhatsapp className="text-xl" />
