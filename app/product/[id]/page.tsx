@@ -113,7 +113,7 @@ export default async function ProductPage({
           {product.colors && (
             <div className="flex flex-col gap-3 mt-4">
               <span className="font-bold text-gray-700">الألوان المتاحة:</span>
-              <div className="flex gap-3 mt-8">
+              <div className="flex gap-3 mt-8 flex-wrap">
                 {product.colors.map((color: string) => (
                   <div
                     key={color}
