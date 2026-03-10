@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaGripLines } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
 
 export default function SidebarNav() {
   const pathname = usePathname();
@@ -26,9 +27,9 @@ export default function SidebarNav() {
       <div className="flex justify-between gap-6 items-center py-1 px-4 ">
         <Link href="/">
           <span
-            className={`text-secondary text-lg flex items-center gap-1 ${pathname === "/" ? "font-semibold" : ""}`}
+            className={`text-secondary text-2xl flex items-center gap-1 ${pathname === "/" ? "font-semibold" : ""}`}
           >
-            Home
+            <FaHome />
           </span>
         </Link>
         {!isOpen && (
