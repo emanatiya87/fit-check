@@ -18,6 +18,8 @@ export const getColorCode = (colorName: string): string => {
     بينك: "#FFC0CB",
     هافان: "#3B2B2C",
     بترولي: "#005F6A",
+    "بابي بلو": "#9DC5E3",
+    كافيه: "#D1C380",
   };
 
   // لو اللون مش موجود في القائمة، هيرجع لون رمادي فاتح كـ Default
