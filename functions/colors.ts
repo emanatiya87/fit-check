@@ -1,6 +1,7 @@
 export const getColorCode = (colorName: string): string => {
   const colorMap: { [key: string]: string } = {
     اسود: "#000000",
+    احمر: "#FF0000",
     ابيض: "#FFFFFF",
     نبيتي: "#800000",
     زيتي: "#4b5320",
