@@ -145,7 +145,7 @@ export default async function ProductPage({
               </div>
             )}
             <Link
-              href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.netlify.app/product/${product.id}`)}`}
+              href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.netlify.app/product/${id}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
