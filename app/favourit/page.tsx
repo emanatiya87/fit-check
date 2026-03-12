@@ -9,6 +9,7 @@ interface Product {
   price: string;
   lastPrice?: string;
   imgSrc: string;
+  isInStock?: boolean;
 }
 export default function FavouritePage() {
   const { favorites } = useFav();
@@ -38,6 +39,7 @@ export default function FavouritePage() {
                   price={product.price}
                   lastPrice={product.lastPrice ? product.lastPrice : ""}
                   imgSrc={product.imgSrc}
+                  isInStock={product.isInStock ?? true}
                 />
               </Link>
             ))}
