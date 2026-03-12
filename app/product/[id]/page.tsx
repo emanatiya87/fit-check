@@ -144,18 +144,24 @@ export default async function ProductPage({
                 </div>
               </div>
             )}
-            <Link
-              href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.netlify.app/product/${id}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
+            {product.isInStock ? (
+              <Link
+                href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.netlify.app/product/${id}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
              hover:bg-[#25D366] hover:text-white hover:border-[#25D366]
              rounded-full font-semibold text-md px-5 py-2.5 
              flex items-center gap-2 m-auto transition-all duration-300"
-            >
-              <FaWhatsapp className="text-xl" />
-              اطلبي على الواتساب
-            </Link>
+              >
+                <FaWhatsapp className="text-xl" />
+                اطلبي على الواتساب
+              </Link>
+            ) : (
+              <div className="  w-full  bg-gray-800  flex items-center justify-center z-20 ">
+                <span className="text-white text-lg font-bold">نفذ</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

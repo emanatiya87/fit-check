@@ -10,18 +10,22 @@ export function CardComponent({
   title,
   lastPrice = "",
   price,
+  isInStock,
 }: {
   _id: string;
   imgSrc: string;
   title: string;
   lastPrice: string;
   price: string;
+  isInStock: boolean;
 }) {
   const { addToFav, removeFromFav, isFavorite } = useFav();
   const liked = isFavorite(_id);
 
   const toggleFav = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!isInStock) return;
+
     if (liked) {
       removeFromFav(_id);
     } else {
@@ -29,7 +33,15 @@ export function CardComponent({
     }
   };
   return (
-    <div className="block shadow-2xl  dark:border dark:border-background">
+    <div
+      className={`block shadow-2xl dark:border dark:border-background relative
+  ${!isInStock ? "opacity-60 grayscale" : ""}`}
+    >
+      {!isInStock && (
+        <div className="absolute top-0  right-0 w-full  bg-black bg-opacity-50 flex items-center justify-center z-20 ">
+          <span className="text-white text-lg font-bold">نفذ</span>
+        </div>
+      )}
       <div className="overflow-hidden relative text-center h-52 flex items-center justify-center">
         <button
           onClick={toggleFav}
@@ -48,7 +60,7 @@ export function CardComponent({
           alt={title}
         />
       </div>
-      <div className="py-2 px-1 text-center gap-2 flex flex-col justify-center items-center">
+      <div className="py-2 px-1 text-center gap-2 flex flex-col justify-center items-center ">
         <div className="inline-flex items-center border border-primary text-xs text-primary font-medium px-1.5 py-0.5 rounded-sm shadow-xl w-fit">
           <FaFire className="text-primary  " />
           Trending

@@ -98,6 +98,7 @@ export default function ProductList({
                   ? urlFor(product.mainImage).url()
                   : "/placeholder.jpg"
               }
+              isInStock={product.isInStock}
             />
           </Link>
         ))}
