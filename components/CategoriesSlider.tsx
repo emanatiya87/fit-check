@@ -30,6 +30,13 @@ const categories = [
   },
   {
     id: 5,
+    name: "home-wear",
+    href: "/home-wear",
+    image: "/homewear.jpg",
+    items: "1+ items",
+  },
+  {
+    id: 6,
     name: "All Categories",
     href: "/shop",
     image: "/shoping.jpg",

@@ -73,6 +73,12 @@ export default function ProductList({
               <DropdownItem onClick={() => filterCategory("pants")}>
                 Pants
               </DropdownItem>
+              <DropdownItem onClick={() => filterCategory("suits")}>
+                Suits
+              </DropdownItem>
+              <DropdownItem onClick={() => filterCategory("home-wear")}>
+                Home Wear
+              </DropdownItem>
               <DropdownItem onClick={() => filterCategory("all")}>
                 All
               </DropdownItem>

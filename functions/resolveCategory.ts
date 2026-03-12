@@ -1,4 +1,10 @@
-type CategoryKey = "dresses" | "pants" | "tshirts" | "tops" | "suits";
+type CategoryKey =
+  | "dresses"
+  | "pants"
+  | "tshirts"
+  | "tops"
+  | "suits"
+  | "home-wear";
 
 export function resolveCategory(category: string) {
   const map: Record<CategoryKey, { route: string; label: string }> = {
@@ -7,6 +13,7 @@ export function resolveCategory(category: string) {
     tshirts: { route: "tops", label: "توبات وبلوزات" },
     tops: { route: "tops", label: "توبات وبلوزات" },
     suits: { route: "suits", label: "بدل" },
+    "home-wear": { route: "home-wear", label: "ملابس منزلية" },
   };
 
   // لو القيمة مش موجودة في الماب
