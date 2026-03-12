@@ -4,6 +4,7 @@ import ImageGallery from "@/components/ImageGallery";
 import { getColorCode } from "@/functions/colors";
 import { resolveCategory } from "@/functions/resolveCategory";
 import Link from "next/link";
+import CategoriesSliderAutoSnap from "@/components/CategoriesSlider";
 import { phoneNumer } from "@/constants/number";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
@@ -24,133 +25,141 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="w-[85vw] mx-auto py-6 text-right" dir="rtl">
-      {/* Breadcrumbs */}
-      <nav className="flex mb-4 text-sm text-gray-500  gap-2 items-center">
-        <a
-          href="/"
-          className="hover:text-secondary dark:hover:text-primary transition"
-        >
-          الرئيسية
-        </a>
-        <span>/</span>
-        <Link href={`/${route}`} className="hover:text-secondary">
-          {label}
-        </Link>
-        <span>/</span>
-        <span className="text-secondary  dark:text-primary font-medium">
-          {product.title}
-        </span>
-      </nav>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <ImageGallery mainImage={product.mainImage} gallery={product.gallery} />
-        <div className="flex flex-col gap-4">
-          <h1 className="text-2xl font-semibold text-secondary dark:text-primary">
+    <section>
+      <div className="w-[85vw] mx-auto py-6 text-right" dir="rtl">
+        {/* Breadcrumbs */}
+        <nav className="flex mb-4 text-sm text-gray-500  gap-2 items-center">
+          <a
+            href="/"
+            className="hover:text-secondary dark:hover:text-primary transition"
+          >
+            الرئيسية
+          </a>
+          <span>/</span>
+          <Link href={`/${route}`} className="hover:text-secondary">
+            {label}
+          </Link>
+          <span>/</span>
+          <span className="text-secondary  dark:text-primary font-medium">
             {product.title}
-          </h1>
-          <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-          <div className="flex flex-col gap-1">
-            {" "}
-            {/* حاوية للسعر عشان لو حبيتي تضيفي "شامل الضريبة" مثلاً */}
-            <div className="flex items-baseline gap-3">
+          </span>
+        </nav>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <ImageGallery
+            mainImage={product.mainImage}
+            gallery={product.gallery}
+          />
+          <div className="flex flex-col gap-4">
+            <h1 className="text-2xl font-semibold text-secondary dark:text-primary">
+              {product.title}
+            </h1>
+            <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+            <div className="flex flex-col gap-1">
               {" "}
-              {/* items-baseline بتخلي الحروف على سطر واحد مهما اختلف حجم الخط */}
-              {/* السعر الحالي */}
-              <div className="flex items-center gap-1">
-                <span className="text-sm font-medium text-secondary dark:text-primary">
-                  EGP
-                </span>
-                <span className="text-4xl font-bold text-secondary dark:text-primary tracking-tight">
-                  {product.price}
-                </span>
-              </div>
-              {/* السعر القديم ونسبة الخصم */}
-              {product.lastPeice && (
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-400 line-through text-lg decoration-red-400/50">
-                    {product.lastPeice}
+              {/* حاوية للسعر عشان لو حبيتي تضيفي "شامل الضريبة" مثلاً */}
+              <div className="flex items-baseline gap-3">
+                {" "}
+                {/* items-baseline بتخلي الحروف على سطر واحد مهما اختلف حجم الخط */}
+                {/* السعر الحالي */}
+                <div className="flex items-center gap-1">
+                  <span className="text-sm font-medium text-secondary dark:text-primary">
+                    EGP
                   </span>
-
-                  {/* بادج الخصم - اختياري بس بيحفز جداً على الشراء */}
-                  <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full">
-                    وفرت {Number(product.lastPeice) - Number(product.price)}{" "}
-                    جنيه
+                  <span className="text-4xl font-bold text-secondary dark:text-primary tracking-tight">
+                    {product.price}
                   </span>
                 </div>
-              )}
-            </div>
-          </div>
-          {product.description && (
-            <>
-              <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-              <p className="text-gray-700 text-md leading-relaxed">
-                {product.description}
-              </p>
-            </>
-          )}
-          {product.material && (
-            <div>
-              <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-              <h3 className="font-bold  text-gray-700 text-md leading-relaxed">
-                الخامه : <span> {product.material}</span>
-              </h3>{" "}
-            </div>
-          )}
-          {product.sizes && (
-            <div className="flex gap-2 items-center">
-              <span className="font-bold text-gray-700">المقاسات:</span>
-              {product.sizes.map((s: string) => (
-                <span
-                  key={s}
-                  className="px-3 py-1 border rounded text-gray-700"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          )}
-          {/* قسم الألوان المطور */}
-          {product.colors && (
-            <div className="flex flex-col gap-3 mt-4">
-              <span className="font-bold text-gray-700">الألوان المتاحة:</span>
-              <div className="flex gap-3 mt-8 flex-wrap">
-                {product.colors.map((color: string) => (
-                  <div
-                    key={color}
-                    className="group relative flex flex-col items-center mb-6"
-                  >
-                    {/* الدائرة */}
-                    <span
-                      className="block w-8 h-8 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 cursor-pointer hover:ring-secondary transition-all"
-                      style={{ backgroundColor: getColorCode(color) }}
-                    ></span>
+                {/* السعر القديم ونسبة الخصم */}
+                {product.lastPeice && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-400 line-through text-lg decoration-red-400/50">
+                      {product.lastPeice}
+                    </span>
 
-                    {/* Tooltip */}
-                    <span
-                      className="absolute -top-8 text-center bg-gray-600 text-white text-[10px] px-2 py-1 rounded 
-            opacity-100 md:opacity-0 group-hover:md:opacity-100 transition-opacity whitespace-nowrap"
-                    >
-                      {color}
+                    {/* بادج الخصم - اختياري بس بيحفز جداً على الشراء */}
+                    <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                      وفرت {Number(product.lastPeice) - Number(product.price)}{" "}
+                      جنيه
                     </span>
                   </div>
-                ))}
+                )}
               </div>
             </div>
-          )}
-          <Link
-            href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
+            {product.description && (
+              <>
+                <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+                <p className="text-gray-700 text-md leading-relaxed">
+                  {product.description}
+                </p>
+              </>
+            )}
+            {product.material && (
+              <div>
+                <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+                <h3 className="font-bold  text-gray-700 text-md leading-relaxed">
+                  الخامه : <span> {product.material}</span>
+                </h3>{" "}
+              </div>
+            )}
+            {product.sizes && (
+              <div className="flex gap-2 items-center">
+                <span className="font-bold text-gray-700">المقاسات:</span>
+                {product.sizes.map((s: string) => (
+                  <span
+                    key={s}
+                    className="px-3 py-1 border rounded text-gray-700"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            )}
+            {/* قسم الألوان المطور */}
+            {product.colors && (
+              <div className="flex flex-col gap-3 mt-4">
+                <span className="font-bold text-gray-700">
+                  الألوان المتاحة:
+                </span>
+                <div className="flex gap-3 mt-8 flex-wrap">
+                  {product.colors.map((color: string) => (
+                    <div
+                      key={color}
+                      className="group relative flex flex-col items-center mb-6"
+                    >
+                      {/* الدائرة */}
+                      <span
+                        className="block w-8 h-8 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 cursor-pointer hover:ring-secondary transition-all"
+                        style={{ backgroundColor: getColorCode(color) }}
+                      ></span>
+
+                      {/* Tooltip */}
+                      <span
+                        className="absolute -top-8 text-center bg-gray-600 text-white text-[10px] px-2 py-1 rounded 
+            opacity-100 md:opacity-0 group-hover:md:opacity-100 transition-opacity whitespace-nowrap"
+                      >
+                        {color}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <Link
+              href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
              hover:bg-[#25D366] hover:text-white hover:border-[#25D366]
              rounded-full font-semibold text-md px-5 py-2.5 
              flex items-center gap-2 m-auto transition-all duration-300"
-          >
-            <FaWhatsapp className="text-xl" />
-            اطلبي على الواتساب
-          </Link>
+            >
+              <FaWhatsapp className="text-xl" />
+              اطلبي على الواتساب
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+      <CategoriesSliderAutoSnap />
+    </section>
   );
 }
