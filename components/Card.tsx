@@ -35,7 +35,7 @@ export function CardComponent({
   return (
     <div
       className={`block shadow-2xl dark:border dark:border-background relative
-  ${!isInStock ? "opacity-60 grayscale" : ""}`}
+  ${!isInStock ? "opacity-30 grayscale" : ""}`}
     >
       {!isInStock && (
         <div className="absolute top-0  right-0 w-full  bg-black bg-opacity-50 flex items-center justify-center z-20 ">
