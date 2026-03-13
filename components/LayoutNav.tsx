@@ -23,6 +23,7 @@ export default function SidebarNav() {
     { href: "/tops", label: "Tops" },
     { href: "/pants", label: "Pants" },
     { href: "/suits", label: "Suits" },
+    { href: "/home-wear", label: "Home Wear" },
     { href: "/replace", label: "Replacement" },
   ];
 

@@ -116,6 +116,14 @@ export function Contacts() {
                 البدل
               </Link>
             </li>
+            <li>
+              <Link
+                href="/home-wear"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                ملابس المنزل
+              </Link>
+            </li>
           </ul>
         </div>
         {/* الدفع */}
