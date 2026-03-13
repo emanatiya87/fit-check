@@ -88,9 +88,9 @@ export default async function ProductPage({
             {product.description && (
               <>
                 <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-                <p className="text-gray-700 text-md leading-relaxed">
+                <pre className="text-gray-700 text-md leading-relaxed">
                   {product.description}
-                </p>
+                </pre>
               </>
             )}
             {product.material && (
