@@ -15,7 +15,7 @@ export default function ProductList({
   appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
-
+  console.log(products);
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
@@ -37,6 +37,10 @@ export default function ProductList({
     });
     setViewedProducts(sorted);
   };
+  function filterSeason(season: string) {
+    const filtered = products.filter((p) => p.season === season);
+    setViewedProducts(filtered);
+  }
   return (
     <>
       <div
@@ -58,6 +62,24 @@ export default function ProductList({
             </DropdownItem>
             <DropdownItem onClick={() => sortProducts("high-to-low")}>
               Price: High to Low
+            </DropdownItem>
+          </Dropdown>
+        </span>
+        <span className="text-secondary font-semibold" dir="ltr">
+          <Dropdown
+            label={
+              <div className="flex items-center gap-2">
+                <span>seasons</span>
+              </div>
+            }
+            inline
+            className="z-30"
+          >
+            <DropdownItem onClick={() => filterSeason("winter")}>
+              Winter
+            </DropdownItem>
+            <DropdownItem onClick={() => filterSeason("summer")}>
+              Summer
             </DropdownItem>
           </Dropdown>
         </span>
