@@ -19,6 +19,7 @@ export const getColorCode = (colorName: string): string => {
     هافان: "#3B2B2C",
     بترولي: "#005F6A",
     "بابي بلو": "#9DC5E3",
+    "مينت جرين": "#98FB98",
     كافيه: "#D1C380",
   };
 
