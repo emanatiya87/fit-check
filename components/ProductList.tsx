@@ -15,7 +15,6 @@ export default function ProductList({
   appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
-  console.log(products);
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
