@@ -6,6 +6,7 @@ import { resolveCategory } from "@/functions/resolveCategory";
 import Link from "next/link";
 import CategoriesSliderAutoSnap from "@/components/CategoriesSlider";
 import { phoneNumer } from "@/constants/number";
+import SizeChart from "@/components/SizeChart";
 async function getProduct(id: string) {
   const query = `*[_type == "product" && _id == "${id}"][0]`;
   const data = await client.fetch(query, {}, { next: { revalidate: 30 } });
@@ -20,13 +21,14 @@ export default async function ProductPage({
   const { id } = await params;
   const product = await getProduct(id);
   const { route, label } = resolveCategory(product.category);
+  console.log(product);
   if (!product) {
     return <div className="text-center py-20 ">المنتج غير موجود</div>;
   }
 
   return (
     <section>
-      <div className="w-[85vw] mx-auto py-6 text-right" dir="rtl">
+      <div className="w-[90vw] md:w-[85vw] mx-auto py-6 text-right" dir="rtl">
         {/* Breadcrumbs */}
         <nav className="flex mb-4 text-sm text-gray-500  gap-2 items-center">
           <a
@@ -165,6 +167,7 @@ export default async function ProductPage({
           </div>
         </div>
       </div>
+      <SizeChart product={product} />
       <CategoriesSliderAutoSnap />
     </section>
   );
