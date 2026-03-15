@@ -21,7 +21,6 @@ export default async function ProductPage({
   const { id } = await params;
   const product = await getProduct(id);
   const { route, label } = resolveCategory(product.category);
-  console.log(product);
   if (!product) {
     return <div className="text-center py-20 ">المنتج غير موجود</div>;
   }
@@ -90,9 +89,14 @@ export default async function ProductPage({
             {product.description && (
               <>
                 <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
-                <pre className="text-gray-700 text-md leading-relaxed">
-                  {product.description}
-                </pre>
+                <ul className="list-disc pl-6 text-gray-700 text-md leading-relaxed space-y-1">
+                  {product.description
+                    ?.split("\n")
+                    .filter((line: string) => line.trim() !== "")
+                    .map((line: string, index: number) => (
+                      <li key={index}>{line}</li>
+                    ))}
+                </ul>
               </>
             )}
             {product.material && (
