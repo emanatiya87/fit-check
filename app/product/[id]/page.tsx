@@ -104,7 +104,7 @@ export default async function ProductPage({
                 <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
                 <h3 className="font-bold  text-gray-700 text-md leading-relaxed">
                   الخامه : <span> {product.material}</span>
-                </h3>{" "}
+                </h3>
               </div>
             )}
             {product.sizes && (

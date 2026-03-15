@@ -7,9 +7,9 @@ export default function SizeChart({ product }: { product: any }) {
     product;
 
   const cat = category?.toLowerCase();
-
+  console.log("Product Category:", cat);
   const isPants = cat === "pants";
-  const isSuits = cat === "suits";
+  const isSuits = cat === "suits" || cat === "home-wear";
   const isTshirts = cat === "tshirts";
 
   return (
