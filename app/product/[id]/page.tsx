@@ -126,27 +126,60 @@ export default async function ProductPage({
                 <span className="font-bold text-gray-700">
                   الألوان المتاحة:
                 </span>
-                <div className="flex gap-3 mt-8 flex-wrap">
-                  {product.colors.map((color: string) => (
-                    <div
-                      key={color}
-                      className="group relative flex flex-col items-center mb-6"
-                    >
-                      {/* الدائرة */}
-                      <span
-                        className="block w-8 h-8 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 cursor-pointer hover:ring-secondary transition-all"
-                        style={{ backgroundColor: getColorCode(color) }}
-                      ></span>
 
-                      {/* Tooltip */}
-                      <span
-                        className="absolute -top-8 text-center bg-gray-600 text-white text-[10px] px-2 py-1 rounded 
-            opacity-100 md:opacity-0 group-hover:md:opacity-100 transition-opacity whitespace-nowrap"
+                <div className="flex gap-3 mt-8 flex-wrap">
+                  {product.colors.map(
+                    (item: { color: string; isColorAvailable: boolean }) => (
+                      <div
+                        key={item.color}
+                        className="group relative flex flex-col items-center mb-6"
                       >
-                        {color}
-                      </span>
-                    </div>
-                  ))}
+                        {/* Color Circle Container */}
+                        {/* الدائرة */}
+                        <span
+                          className={`
+    group relative block w-9 h-9 rounded-full border border-gray-200 shadow-sm ring-1 ring-transparent 
+    transition-all duration-300
+    ${item.isColorAvailable ? "cursor-pointer hover:ring-secondary hover:scale-105" : "cursor-not-allowed"}
+  `}
+                          style={{ backgroundColor: getColorCode(item.color) }}
+                        >
+                          {!item.isColorAvailable && (
+                            <>
+                              {/* Subtle Overlay to "mute" the color */}
+                              <div className="absolute inset-0 bg-black/5 rounded-full" />
+
+                              {/* Container for the X to ensure perfect centering */}
+                              <div className="absolute inset-0 flex items-center justify-center p-1">
+                                {/* Logic: If color is white (#ffffff or 'white'), use a dark X. 
+            Otherwise, use a white X for better contrast on dark colors.
+        */}
+                                {["ابيض"].includes(item.color.toLowerCase()) ? (
+                                  <>
+                                    <span className="absolute h-[1.5px] w-full bg-red-600 rotate-45" />
+                                    <span className="absolute h-[1.5px] w-full bg-red-600 -rotate-45" />
+                                  </>
+                                ) : (
+                                  <>
+                                    <span className="absolute h-[1.5px] w-full bg-gray-100 rotate-45 shadow-sm" />
+                                    <span className="absolute h-[1.5px] w-full bg-gray-100 -rotate-45 shadow-sm" />
+                                  </>
+                                )}
+                              </div>
+                            </>
+                          )}
+                        </span>
+
+                        {/* Tooltip */}
+                        <span
+                          className="absolute -top-8 text-center bg-gray-600 text-white text-[10px] px-2 py-1 rounded 
+              opacity-100 md:opacity-0 group-hover:md:opacity-100 transition-opacity whitespace-nowrap"
+                        >
+                          {item.color}
+                        </span>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             )}
