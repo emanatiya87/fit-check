@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { TbArrowsSort } from "react-icons/tb";
 import { urlFor } from "@/lib/sanity";
-import Title from "./title";
 export default function ProductList({
   products,
   appearFilter = false,
@@ -15,7 +14,7 @@ export default function ProductList({
   appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
-  const [titleText, setTitleText] = useState("Seasons");
+  const [titleText, setTitleText] = useState("");
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
@@ -82,7 +81,7 @@ export default function ProductList({
           <Dropdown
             label={
               <div className="flex items-center gap-2">
-                <span>{titleText}</span>
+                <span>{titleText} season</span>
               </div>
             }
             inline
