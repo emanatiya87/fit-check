@@ -14,8 +14,7 @@ export function Contacts() {
             alt="Picture of the author"
           />
           <p className="text-gray-500 text-sm leading-relaxed">
-            اختيارك الأول للأناقة الرمضانية والملابس العصرية بجودة ممتازة وسعر
-            يناسبك.
+            اختيارك الأول للأناقة والملابس العصرية بجودة ممتازة وسعر يناسبك.
           </p>
           <div className="flex gap-3 mt-2 flex-wrap">
             <Link
