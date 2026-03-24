@@ -8,6 +8,7 @@ import { FavProvider } from "@/context/FavContext";
 import { Contacts } from "@/components/Contacts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import LayoutClient from "@/components/layoutCLient";
+import WhatsappButton from "@/components/whatsapp";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
           </div>
           {children}
           <Contacts />
+          <WhatsappButton />
         </FavProvider>
         <GoogleAnalytics gaId="G-64Q539S7S7" />
       </body>
