@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { TbArrowsSort } from "react-icons/tb";
 import { urlFor } from "@/lib/sanity";
-
+import Title from "./title";
 export default function ProductList({
   products,
   appearFilter = false,
@@ -15,6 +15,7 @@ export default function ProductList({
   appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
+  const [titleText, setTitleText] = useState("Seasons");
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
@@ -36,10 +37,23 @@ export default function ProductList({
     });
     setViewedProducts(sorted);
   };
-  function filterSeason(season: string) {
-    const filtered = products.filter((p) => p.season === season);
-    setViewedProducts(filtered);
-  }
+  const filterSeason = (selected: string) => {
+    if (selected === "all") {
+      setViewedProducts(products);
+      setTitleText(selected);
+
+      return;
+    }
+
+    const result = products.filter(
+      (item) => item.season === selected || item.season === "mix",
+    );
+
+    setViewedProducts(result);
+    setTitleText(selected);
+  };
+  console.log(viewedProducts);
+
   return (
     <>
       <div
@@ -68,7 +82,7 @@ export default function ProductList({
           <Dropdown
             label={
               <div className="flex items-center gap-2">
-                <span>seasons</span>
+                <span>{titleText}</span>
               </div>
             }
             inline
@@ -77,9 +91,12 @@ export default function ProductList({
             <DropdownItem onClick={() => filterSeason("winter")}>
               Winter
             </DropdownItem>
+
             <DropdownItem onClick={() => filterSeason("summer")}>
               Summer
             </DropdownItem>
+
+            <DropdownItem onClick={() => filterSeason("all")}>All</DropdownItem>
           </Dropdown>
         </span>
         {appearFilter && (
