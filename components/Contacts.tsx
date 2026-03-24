@@ -159,6 +159,19 @@ export function Contacts() {
                 الدفع عند الاستلام
               </span>
             </div>
+            {/*Vodavon cash */}
+            <div className="group relative bg-white p-2 border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center min-w-20">
+              <Image
+                src="/vodavonm cash.jpg"
+                width={60}
+                height={60}
+                className="object-contain  group-hover:grayscale-0 transition-all"
+                alt="فودافون كاش"
+              />
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                فودافون كاش
+              </span>
+            </div>
           </div>
         </div>
       </div>
