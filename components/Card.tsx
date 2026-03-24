@@ -35,10 +35,10 @@ export function CardComponent({
   return (
     <div
       className={`block shadow-2xl dark:border dark:border-background relative
-  ${!isInStock ? "opacity-30 grayscale" : ""}`}
+  ${!isInStock ? "opacity-60 " : ""}`}
     >
       {!isInStock && (
-        <div className="absolute top-0  right-0 w-full  bg-black bg-opacity-50 flex items-center justify-center z-20 ">
+        <div className="absolute top-0  right-0 w-full  bg-red-800 bg-opacity-40 flex items-center justify-center z-20 ">
           <span className="text-white text-lg font-bold">نفذ</span>
         </div>
       )}
