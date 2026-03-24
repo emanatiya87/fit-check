@@ -30,6 +30,7 @@ body {
   background-size: cover;
   background-position: center;
   display: inline-block;
+  text-shadow: 0 0 13px var(--color-primary);
 }
 .banner-bg {
   background-image: url("/bgBanner.webp");
