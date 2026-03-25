@@ -61,6 +61,14 @@ export function Contacts() {
             </li>
             <li>
               <Link
+                href="/about-us"
+                className="hover:text-secondary dark:hover:text-primary transition"
+              >
+                من نحن
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/favourit"
                 className="hover:text-secondary dark:hover:text-primary transition"
               >
