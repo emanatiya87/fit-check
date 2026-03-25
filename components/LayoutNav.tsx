@@ -18,6 +18,7 @@ export default function SidebarNav() {
 
   const links = [
     { href: "/", label: "الرئيسية" },
+    { href: "/about-us", label: "من نحن" },
     { href: "/favourit", label: "المفضلة" },
     { href: "/dresses", label: "الفساتين" },
     { href: "/tops", label: "التيشرتات" },
