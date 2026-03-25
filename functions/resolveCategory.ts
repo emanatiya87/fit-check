@@ -1,18 +1,11 @@
-type CategoryKey =
-  | "dresses"
-  | "pants"
-  | "tshirts"
-  | "tops"
-  | "suits"
-  | "home-wear";
+type CategoryKey = "dresses" | "pants" | "tshirts" | "suits" | "home-wear";
 
 export function resolveCategory(category: string) {
   const map: Record<CategoryKey, { route: string; label: string }> = {
     dresses: { route: "dresses", label: "فساتين وعبايات" },
     pants: { route: "pants", label: "بنطلونات" },
     tshirts: { route: "tops", label: "توبات وبلوزات" },
-    tops: { route: "tops", label: "توبات وبلوزات" },
-    suits: { route: "suits", label: "بدل" },
+    suits: { route: "suits", label: "اطقم سوتس" },
     "home-wear": { route: "home-wear", label: "ملابس منزلية" },
   };
 

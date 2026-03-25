@@ -21,9 +21,8 @@ interface iAppProps {
 export default function ImageGallery({ mainImage, gallery }: iAppProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const allImages = gallery ? [mainImage, ...gallery] : [mainImage];
-  console.log(gallery);
   return (
-    <div className="relative w-[70%] mx-auto">
+    <div className="relative w-[85%] md:w-[70%]  mx-auto">
       <Swiper
         style={
           {
