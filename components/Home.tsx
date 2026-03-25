@@ -7,10 +7,12 @@ import Features from "./features";
 import Newsletter from "./Newsletter";
 import CategoriesSlider from "./CategoriesSlider";
 import LoadingSlider from "./loadingSlider";
+import Categories from "./categories";
 export default function Home() {
   return (
     <>
       <Banner />
+      <Categories />
       <Suspense fallback={<ProductSkeleton />}>
         <Products />
       </Suspense>
