@@ -14,7 +14,7 @@ export default function ProductList({
   appearFilter?: boolean;
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
-  const [titleText, setTitleText] = useState("");
+  const [titleText, setTitleText] = useState("الموسم");
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
@@ -39,7 +39,7 @@ export default function ProductList({
   const filterSeason = (selected: string) => {
     if (selected === "all") {
       setViewedProducts(products);
-      setTitleText(selected);
+      setTitleText("كل الفصول");
 
       return;
     }
@@ -49,7 +49,11 @@ export default function ProductList({
     );
 
     setViewedProducts(result);
-    setTitleText(selected);
+    if (selected == "summer") {
+      setTitleText("صيفي");
+    } else if (selected == "winter") {
+      setTitleText("شتوي");
+    }
   };
   console.log(viewedProducts);
 
@@ -63,17 +67,17 @@ export default function ProductList({
           <Dropdown
             label={
               <div className="flex items-center gap-2">
-                <TbArrowsSort /> <span>Sort</span>
+                <TbArrowsSort /> <span>الترتيب </span>
               </div>
             }
             inline
             className="z-30"
           >
             <DropdownItem onClick={() => sortProducts("low-to-high")}>
-              Price: Low to High
+              السعر: من الاقل للاعلى
             </DropdownItem>
             <DropdownItem onClick={() => sortProducts("high-to-low")}>
-              Price: High to Low
+              السعر: من الاعلى للاقل
             </DropdownItem>
           </Dropdown>
         </span>
@@ -81,43 +85,45 @@ export default function ProductList({
           <Dropdown
             label={
               <div className="flex items-center gap-2">
-                <span>{titleText} season</span>
+                <span>{titleText} </span>
               </div>
             }
             inline
             className="z-30"
           >
             <DropdownItem onClick={() => filterSeason("winter")}>
-              Winter
+              شتاء
             </DropdownItem>
 
             <DropdownItem onClick={() => filterSeason("summer")}>
-              Summer
+              صيف
             </DropdownItem>
 
-            <DropdownItem onClick={() => filterSeason("all")}>All</DropdownItem>
+            <DropdownItem onClick={() => filterSeason("all")}>
+              الكل
+            </DropdownItem>
           </Dropdown>
         </span>
         {appearFilter && (
           <span className="text-secondary font-semibold">
-            <Dropdown label="Filter" inline className="z-30 ">
+            <Dropdown label="تصنيف" inline className="z-30 ">
               <DropdownItem onClick={() => filterCategory("dresses")}>
-                Dresses
+                فساتين
               </DropdownItem>
               <DropdownItem onClick={() => filterCategory("tshirts")}>
-                Tops
+                تيشرتات
               </DropdownItem>
               <DropdownItem onClick={() => filterCategory("pants")}>
-                Pants
+                بناطيل
               </DropdownItem>
               <DropdownItem onClick={() => filterCategory("suits")}>
-                Suits
+                اطقم سوتس
               </DropdownItem>
               <DropdownItem onClick={() => filterCategory("home-wear")}>
-                Home Wear
+                ملابس منزل
               </DropdownItem>
               <DropdownItem onClick={() => filterCategory("all")}>
-                All
+                الكل
               </DropdownItem>
             </Dropdown>
           </span>
