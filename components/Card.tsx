@@ -39,7 +39,9 @@ export function CardComponent({
     >
       {!isInStock && (
         <div className="absolute top-0  right-0 w-full  bg-red-800 bg-opacity-40 flex items-center justify-center z-20 ">
-          <span className="text-white text-lg font-bold">نفذ</span>
+          <span className="text-white text-lg font-bold" dir="rtl">
+            غير متوفر
+          </span>
         </div>
       )}
       <div className="overflow-hidden relative text-center h-52 flex items-center justify-center">
