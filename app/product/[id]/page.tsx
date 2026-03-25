@@ -99,6 +99,18 @@ export default async function ProductPage({
                 </ul>
               </>
             )}
+            {product.isSizeAvailable && (
+              <div>
+                <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}
+                <h3
+                  className="font-bold text-gray-700 text-md leading-relaxed"
+                  dir={"rtl"}
+                >
+                  تأكد من أن ملابسك الجديدة تناسبك تمامًا ! تصفح جدول المقاسات
+                  بالاسفل للتأكد من مقاسك.
+                </h3>
+              </div>
+            )}
             {product.material && (
               <div>
                 <div className="h-px w-full rounded-full bg-linear-to-r from-transparent via-[var(--color-secondary)/20] to-secondary"></div>{" "}

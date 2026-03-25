@@ -8,7 +8,7 @@ export default function Categories() {
       <Title titleText="تسوق حسب المجموعه" color="primary" />
       <div className="flex flex-wrap">
         {categories.map((category) => (
-          <div key={category.id} className="w-1/3 md:w-1/4  px-1 my-1">
+          <div key={category.id} className="w-1/3 md:w-1/4 lg:w-1/6  px-1 my-1">
             <Link href={category.href}>
               <div className="relative w-full h-30  rounded-xl overflow-hidden bg-gray-100">
                 <Image

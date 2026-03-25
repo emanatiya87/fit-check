@@ -112,7 +112,7 @@ export function Contacts() {
                 href="/suits"
                 className="hover:text-secondary dark:hover:text-primary transition"
               >
-                البدل
+                اطقم سوت
               </Link>
             </li>
             <li>
