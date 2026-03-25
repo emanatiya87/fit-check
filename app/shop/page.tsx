@@ -11,7 +11,7 @@ export default async function Shop() {
   );
   return (
     <>
-      <Title titleText="All Products" color="primary" />
+      <Title titleText="كل القطع المتاحه" color="primary" />
       <ProductList products={products} appearFilter={true} />
       <CategoriesSlider />
     </>

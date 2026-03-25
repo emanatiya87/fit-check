@@ -12,7 +12,7 @@ export default async function Pants() {
   let filtered = products.filter((p: any) => p.category === "pants");
   return (
     <>
-      <Title titleText="Pants" color="primary" />
+      <Title titleText="بناطيل" color="primary" />
 
       <ProductList products={filtered} />
       <CategoriesSlider />

@@ -17,14 +17,14 @@ export default function SidebarNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/favourit", label: "Favourite" },
-    { href: "/dresses", label: "Dresses" },
-    { href: "/tops", label: "Tops" },
-    { href: "/pants", label: "Pants" },
-    { href: "/suits", label: "Suits" },
-    { href: "/home-wear", label: "Home Wear" },
-    { href: "/replace", label: "Replacement" },
+    { href: "/", label: "الرئيسية" },
+    { href: "/favourit", label: "المفضلة" },
+    { href: "/dresses", label: "الفساتين" },
+    { href: "/tops", label: "التيشرتات" },
+    { href: "/pants", label: "البناطيل" },
+    { href: "/suits", label: "الاطقم (سوتس)" },
+    { href: "/home-wear", label: "ملابس منزل" },
+    { href: "/replace", label: "سياسة الاستبدال والاسترجاع" },
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function SidebarNav() {
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 right-0 h-screen w-56 bg-background shadow-md
+          fixed top-0 right-0 h-screen w-58 bg-background shadow-md
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "translate-x-full"} 
           z-40 flex flex-col py-6 px-2
