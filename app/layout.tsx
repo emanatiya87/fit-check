@@ -53,8 +53,9 @@ export default function RootLayout({
       <body className="bg-background text-gray-900">
         <FavProvider>
           <LayoutClient />
-          <div className="bg-background mt-0">
-            <LayoutHeader />
+          <LayoutHeader />
+
+          <div className="bg-background mt-[86.44px]">
             <LayoutNav />
           </div>
           {children}
