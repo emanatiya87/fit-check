@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Products() {
   const products = await client.fetch(
-    `*[_type == "product"] | order(_createdAt desc) [0...5]`,
+    `*[_type == "product"] | order(_createdAt desc) [0...9]`,
     {},
     { next: { revalidate: 30 } },
   );
