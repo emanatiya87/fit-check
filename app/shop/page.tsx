@@ -5,7 +5,7 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 export default async function Shop() {
   const products = await client.fetch(
-    `*[_type == "product"]`,
+    `*[_type == "product"]  | order(_createdAt desc)`,
     {},
     { next: { revalidate: 0 } },
   );

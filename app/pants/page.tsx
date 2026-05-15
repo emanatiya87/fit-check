@@ -5,9 +5,9 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 export default async function Pants() {
   const products = await client.fetch(
-    `*[_type == "product"]`,
+    `*[_type == "product"]  | order(_createdAt desc)`,
     {},
-    { next: { revalidate: 0 } },
+    { next: { revalidate: 30 } },
   );
   let filtered = products.filter((p: any) => p.category === "pants");
   return (
