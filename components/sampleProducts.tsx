@@ -3,16 +3,22 @@ import Title from "./title";
 import ProductList from "./ProductList";
 export const dynamic = "force-dynamic";
 
-export default async function Products() {
+export default async function SampleProducts({
+  category,
+  title,
+}: {
+  category: string;
+  title: string;
+}) {
   const products = await client.fetch(
-    `*[_type == "product"] | order(_createdAt desc) [0...5]`,
-    {},
+    `*[_type == "product" && category == $category] | order(_createdAt desc) [0...5]`,
+    { category },
     { next: { revalidate: 30 } },
   );
 
   return (
     <>
-      <Title titleText="وصل حديثا" color="primary" />
+      <Title titleText={title} color="primary" />
       <ProductList products={products} />
     </>
   );
