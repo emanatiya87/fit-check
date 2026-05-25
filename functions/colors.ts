@@ -14,6 +14,7 @@ export const getColorCode = (colorName: string): string => {
     لافندر: "#9D9DCC",
     مسطردة: "#E1AD01",
     أخضر: "#008000",
+    اخضر: "#008000",
     ازرق: "#0000FF",
     بينك: "#FFC0CB",
     هافان: "#3B2B2C",
