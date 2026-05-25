@@ -51,11 +51,7 @@ export default async function SampleProducts({
   return (
     <>
       <Title titleText={title} color="primary" />
-      <SampleProductList
-        products={products}
-        category={category}
-        href={hrefByCategory[category]}
-      />
+      <SampleProductList products={products} href={hrefByCategory[category]} />
     </>
   );
 }

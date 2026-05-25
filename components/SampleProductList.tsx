@@ -8,11 +8,9 @@ import { TbChevronRight, TbChevronLeft, TbArrowLeft } from "react-icons/tb";
 
 export default function SampleProductList({
   products,
-  category,
   href,
 }: {
   products: any[];
-  category: string;
   href: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
