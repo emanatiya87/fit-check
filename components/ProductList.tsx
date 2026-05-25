@@ -55,7 +55,6 @@ export default function ProductList({
       setTitleText("شتوي");
     }
   };
-  console.log(viewedProducts);
 
   return (
     <>
