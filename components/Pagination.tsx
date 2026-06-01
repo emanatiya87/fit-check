@@ -14,7 +14,7 @@ export default function Pagination({ page, totalPages, category }: Props) {
 
   const season = searchParams.get("season");
   const sort = searchParams.get("sort");
-  const buildUrl = (nextPage: number) => {
+  const buildUrl = (nextPage: number | string) => {
     const params = new URLSearchParams();
 
     params.set("page", nextPage.toString());
