@@ -47,7 +47,7 @@ export function CardComponent({
       <div className="overflow-hidden relative text-center h-52 flex items-center justify-center">
         <button
           onClick={toggleFav}
-          className={`absolute top-2 end-2 z-10 text-xl rounded-lg cursor-pointer transition-colors duration-300 p-1
+          className={`absolute top-2 end-2 text-xl rounded-lg cursor-pointer transition-colors duration-300 p-1
     ${
       liked
         ? "bg-red-500 text-white"

@@ -1,6 +1,6 @@
-// components/Pagination.tsx
+"use client";
 import Link from "next/link";
-
+import { useSearchParams } from "next/navigation";
 interface Props {
   page: number;
   totalPages: number;
@@ -8,8 +8,22 @@ interface Props {
 }
 
 export default function Pagination({ page, totalPages, category }: Props) {
+  const searchParams = useSearchParams();
+
   if (totalPages <= 1) return null;
 
+  const season = searchParams.get("season");
+  const sort = searchParams.get("sort");
+  const buildUrl = (nextPage: number) => {
+    const params = new URLSearchParams();
+
+    params.set("page", nextPage.toString());
+
+    if (season) params.set("season", season);
+    if (sort) params.set("sort", sort);
+
+    return `/${category}?${params.toString()}`;
+  };
   const getPages = () => {
     const delta = 1; // how many pages around current page
 
@@ -38,7 +52,7 @@ export default function Pagination({ page, totalPages, category }: Props) {
     <div className="flex items-center justify-center gap-2 my-6">
       {/* Prev */}
       <Link
-        href={`/${category}?page=${page - 1}`}
+        href={buildUrl(page - 1)}
         className={`px-3 py-1 rounded border ${
           page <= 1
             ? "pointer-events-none opacity-50 border-gray-200"
@@ -57,7 +71,7 @@ export default function Pagination({ page, totalPages, category }: Props) {
         ) : (
           <Link
             key={p}
-            href={`/${category}?page=${p}`}
+            href={buildUrl(p)}
             className={`px-3 py-1 rounded border ${
               page === p
                 ? "bg-primary text-white border-primary pointer-events-none"
@@ -71,7 +85,7 @@ export default function Pagination({ page, totalPages, category }: Props) {
 
       {/* Next */}
       <Link
-        href={`/${category}?page=${page + 1}`}
+        href={buildUrl(page + 1)}
         className={`px-3 py-1 rounded border ${
           page >= totalPages
             ? "pointer-events-none opacity-50 border-gray-200"
