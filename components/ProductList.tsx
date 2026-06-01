@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CardComponent } from "./Card";
 import Link from "next/link";
 import { Dropdown, DropdownItem } from "flowbite-react";
@@ -15,6 +15,9 @@ export default function ProductList({
 }) {
   const [viewedProducts, setViewedProducts] = useState(products);
   const [titleText, setTitleText] = useState("الموسم");
+  useEffect(() => {
+    setViewedProducts(products);
+  }, [products]);
   const filterCategory = (category: string) => {
     if (category === "all") {
       setViewedProducts(products);
