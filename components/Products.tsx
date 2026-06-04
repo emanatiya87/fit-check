@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Products() {
   const products = await client.fetch(
-    `*[_type == "product"] | order(_createdAt desc) [0...6]`,
+    `*[_type == "product"] | order(_createdAt desc) [0...9]`,
     {},
     { next: { revalidate: 30 } },
   );
@@ -13,7 +13,7 @@ export default async function Products() {
   return (
     <>
       <Title titleText="وصل حديثا" color="primary" />
-      <ProductList products={products} />
+      <ProductList products={products} appearAllCard={true} />
     </>
   );
 }
