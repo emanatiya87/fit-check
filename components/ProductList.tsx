@@ -8,7 +8,7 @@ export default function ProductList({
 }: {
   products: any[];
   appearFilter?: boolean;
-  appearAllCard: boolean;
+  appearAllCard?: boolean;
 }) {
   return (
     <>
