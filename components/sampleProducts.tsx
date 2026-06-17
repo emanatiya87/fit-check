@@ -19,7 +19,7 @@ export default async function SampleProducts({
     dresses: "dresses",
   };
   const products = await client.fetch(
-    `*[_type == "product" && category == $category] | order(_createdAt desc) [0...4]`,
+    `*[_type == "product" && category == $category] | order(_createdAt desc) [0...5]`,
     { category },
     { next: { revalidate: 30 } },
   );

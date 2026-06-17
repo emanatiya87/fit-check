@@ -12,7 +12,10 @@ export default function ProductList({
 }) {
   return (
     <>
-      <div className="md:w-[85vw] w-[95%] m-auto flex flex-wrap items-start justify-center ">
+      <div
+        className="md:w-[85vw] w-[95%] m-auto flex flex-wrap items-start justify-center "
+        data-aos="fade-up"
+      >
         {products.map((product: any) => (
           <Link
             href={`/product/${product._id}`}

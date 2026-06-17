@@ -4,7 +4,10 @@ import Title from "./title";
 import { categories } from "@/constants/categories";
 export default function Categories() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 md:w-[85vw] w-[95%] m-auto ">
+    <section
+      className="px-4 sm:px-6 lg:px-8 md:w-[85vw] w-[95%] m-auto "
+      data-aos="fade-up"
+    >
       <Title titleText="تسوق حسب المجموعه" color="primary" />
       <div className="flex flex-wrap">
         {categories.map((category) => (

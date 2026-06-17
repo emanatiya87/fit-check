@@ -30,7 +30,7 @@ export default function SampleProductList({
   };
 
   return (
-    <div className="md:w-[85vw] w-[95%] m-auto" dir="rtl">
+    <div className="md:w-[85vw] w-[95%] m-auto" dir="rtl" data-aos="fade-up">
       <div className="relative">
         {/* Prev arrow (right side in RTL) */}
         <button

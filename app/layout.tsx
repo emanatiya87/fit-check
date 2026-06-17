@@ -8,6 +8,7 @@ import { Contacts } from "@/components/Contacts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import LayoutClient from "@/components/layoutCLient";
 import WhatsappButton from "@/components/whatsapp";
+import AOSProvider from "@/components/AOSProvider";
 
 export const metadata: Metadata = {
   title: "Fit Check - just Click !",
@@ -48,6 +49,7 @@ export default function RootLayout({
           <div className="bg-background mt-[86.44px]">
             <LayoutNav />
           </div>
+          <AOSProvider />
           {children}
           <Contacts />
           <WhatsappButton />

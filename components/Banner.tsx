@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Banner() {
   return (
-    <div className=" pe-8 md:gap-20 flex items-center justify-start text-light w-full relative overflow-hidden">
+    <div
+      className=" pe-8 md:gap-20 flex items-center justify-start text-light w-full relative overflow-hidden "
+      data-aos="fade-up"
+    >
       <Image
         src="/bgBanner.webp"
         alt="bg img"

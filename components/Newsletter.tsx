@@ -1,6 +1,6 @@
 export default function Newsletter() {
   return (
-    <section className=" py-12 px-6">
+    <section className=" py-12 px-6" data-aos="fade-up">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Text Content */}
         <div className="text-center md:text-left">
