@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { ThemeModeScript } from "flowbite-react";
 import LayoutHeader from "@/components/LayoutHeader";
 import LayoutNav from "@/components/LayoutNav";
@@ -8,7 +7,7 @@ import { Contacts } from "@/components/Contacts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import LayoutClient from "@/components/layoutCLient";
 import WhatsappButton from "@/components/whatsapp";
-import AOSProvider from "@/components/AOSProvider";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Fit Check - just Click !",
@@ -49,7 +48,6 @@ export default function RootLayout({
           <div className="bg-background mt-[86.44px]">
             <LayoutNav />
           </div>
-          <AOSProvider />
           {children}
           <Contacts />
           <WhatsappButton />
