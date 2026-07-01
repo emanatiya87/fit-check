@@ -3,7 +3,7 @@ export const categories = [
     id: 1,
     name: "فساتين",
     href: "/dresses",
-    image: "/dress.jpg",
+    image: "/dress.png",
     items: "15+ items",
   },
   {
