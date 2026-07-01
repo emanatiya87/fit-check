@@ -8,7 +8,7 @@ Built as a modern frontend application, it features optimized imagery, server-si
 
 ## 🚀 Live Demo
 
-🔗 **[Live Project Link](https://fit-check-just-click.netlify.app/)**
+🔗 **[Live Project Link](https://fit-check-just-click.vercel.app/)**
 
 ---
 
