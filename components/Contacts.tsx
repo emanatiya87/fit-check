@@ -157,7 +157,7 @@ export function Contacts() {
             {/* Cash on Delivery */}
             <div className="group relative bg-white p-2 border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center min-w-20">
               <Image
-                src="/cash.jfif"
+                src="/cash.jpeg"
                 width={60}
                 height={30}
                 className="object-contain  group-hover:grayscale-0 transition-all"

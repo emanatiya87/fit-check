@@ -24,7 +24,7 @@ export const categories = [
     id: 4,
     name: "اطقم سوت",
     href: "/suits",
-    image: "/Suit.jpg",
+    image: "/suit.png",
     items: "8+ items",
   },
   {
