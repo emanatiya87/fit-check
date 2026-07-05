@@ -30,12 +30,12 @@ export default async function ProductPage({
       <div className="w-[90vw] md:w-[85vw] mx-auto py-6 text-right" dir="rtl">
         {/* Breadcrumbs */}
         <nav className="flex mb-4 text-sm text-gray-500  gap-2 items-center">
-          <a
+          <Link
             href="/"
             className="hover:text-secondary dark:hover:text-primary transition"
           >
             الرئيسية
-          </a>
+          </Link>
           <span>/</span>
           <Link href={`/${route}`} className="hover:text-secondary">
             {label}
@@ -197,7 +197,7 @@ export default async function ProductPage({
             )}
             {product.isInStock ? (
               <Link
-                href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.netlify.app/product/${id}`)}`}
+                href={`https://wa.me/${phoneNumer}?text=${encodeURIComponent(`أهلاً FitCheck، حابة أطلب: ${product.title} , https://fit-check-just-click.vercel.app/product/${id}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-fit mt-4 bg-gray-100 text-[#25D366] border border-gray-200
