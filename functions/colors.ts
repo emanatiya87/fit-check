@@ -27,6 +27,7 @@ export const getColorCode = (colorName: string): string => {
     اصفر: "#FFC000",
     لموني: "#89F336",
     تايجر: "#C88141",
+    سيموني: "#FA8072",
   };
 
   // لو اللون مش موجود في القائمة، هيرجع لون رمادي فاتح كـ Default
