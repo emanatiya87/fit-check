@@ -25,6 +25,8 @@ export default function SidebarNav() {
     { href: "/pants", label: "البناطيل" },
     { href: "/suits", label: "الاطقم (سوتس)" },
     { href: "/home-wear", label: "ملابس منزل" },
+    { href: "/others", label: "منتجات اخرى" },
+    { href: "/shop", label: "كل المجموعات" },
     { href: "/replace", label: "سياسة الاستبدال والاسترجاع" },
   ];
 

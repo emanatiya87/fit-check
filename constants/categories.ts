@@ -36,6 +36,13 @@ export const categories = [
   },
   {
     id: 6,
+    name: "منتجات اخرى",
+    href: "/others",
+    image: "/other.jpg",
+    items: "20+ items",
+  },
+  {
+    id: 7,
     name: "كل المجموعات",
     href: "/shop",
     image: "/shoping.jpg",
