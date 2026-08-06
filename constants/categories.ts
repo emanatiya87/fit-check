@@ -41,11 +41,11 @@ export const categories = [
     image: "/other.jpg",
     items: "20+ items",
   },
-  {
-    id: 7,
-    name: "كل المجموعات",
-    href: "/shop",
-    image: "/shoping.jpg",
-    items: "220+ items",
-  },
+  // {
+  //   id: 7,
+  //   name: "كل المجموعات",
+  //   href: "/shop",
+  //   image: "/shoping.jpg",
+  //   items: "220+ items",
+  // },
 ];
