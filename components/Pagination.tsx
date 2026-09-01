@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+
 interface Props {
   page: number;
   totalPages: number;
@@ -14,9 +15,9 @@ export default function Pagination({ page, totalPages, category }: Props) {
 
   const season = searchParams.get("season");
   const sort = searchParams.get("sort");
+
   const buildUrl = (nextPage: number | string) => {
     const params = new URLSearchParams();
-
     params.set("page", nextPage.toString());
 
     if (season) params.set("season", season);
@@ -24,9 +25,9 @@ export default function Pagination({ page, totalPages, category }: Props) {
 
     return `/${category}?${params.toString()}`;
   };
-  const getPages = () => {
-    const delta = 1; // how many pages around current page
 
+  const getPages = () => {
+    const delta = 1;
     const range: (number | string)[] = [];
     const left = Math.max(2, page - delta);
     const right = Math.min(totalPages - 1, page + delta);
@@ -49,46 +50,53 @@ export default function Pagination({ page, totalPages, category }: Props) {
   const pages = getPages();
 
   return (
-    <div className="flex items-center justify-center gap-2 my-6">
-      {/* Prev */}
+    <div className="flex items-center justify-center gap-1.5 sm:gap-2 my-6 text-sm sm:text-base">
+      {/* Prev Button */}
       <Link
         href={buildUrl(page - 1)}
-        className={`px-3 py-1 rounded border ${
+        className={`px-2.5 py-1.5 sm:px-3 sm:py-1 rounded border transition-colors ${
           page <= 1
-            ? "pointer-events-none opacity-50 border-gray-200"
+            ? "pointer-events-none opacity-40 border-gray-200"
             : "hover:bg-gray-100 border-gray-300"
         }`}
       >
         Prev
       </Link>
 
-      {/* Pages */}
-      {pages.map((p, i) =>
-        p === "..." ? (
-          <span key={`dots-${i}`} className="px-2">
-            ...
-          </span>
-        ) : (
-          <Link
-            key={p}
-            href={buildUrl(p)}
-            className={`px-3 py-1 rounded border ${
-              page === p
-                ? "bg-primary text-white border-primary pointer-events-none"
-                : "border-gray-300 hover:bg-gray-100"
-            }`}
-          >
-            {p}
-          </Link>
-        ),
-      )}
+      {/* Mobile Page Indicator (Shows only on small screens) */}
+      <span className="sm:hidden px-2 text-xs font-medium text-gray-600">
+        {page} / {totalPages}
+      </span>
 
-      {/* Next */}
+      {/* Desktop Page Numbers (Hidden on mobile) */}
+      <div className="hidden sm:flex items-center gap-2">
+        {pages.map((p, i) =>
+          p === "..." ? (
+            <span key={`dots-${i}`} className="px-1 text-gray-400">
+              ...
+            </span>
+          ) : (
+            <Link
+              key={p}
+              href={buildUrl(p)}
+              className={`px-3 py-1 rounded border transition-colors ${
+                page === p
+                  ? "bg-primary text-white border-primary pointer-events-none font-semibold"
+                  : "border-gray-300 hover:bg-gray-100"
+              }`}
+            >
+              {p}
+            </Link>
+          ),
+        )}
+      </div>
+
+      {/* Next Button */}
       <Link
         href={buildUrl(page + 1)}
-        className={`px-3 py-1 rounded border ${
+        className={`px-2.5 py-1.5 sm:px-3 sm:py-1 rounded border transition-colors ${
           page >= totalPages
-            ? "pointer-events-none opacity-50 border-gray-200"
+            ? "pointer-events-none opacity-40 border-gray-200"
             : "hover:bg-gray-100 border-gray-300"
         }`}
       >
