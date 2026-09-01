@@ -4,9 +4,10 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 import Pagination from "@/components/Pagination";
 import FilterBar from "@/components/FilterBar";
+
 const PAGE_SIZE = 12;
 
-export default async function Tops({
+export default async function Suits({
   searchParams,
 }: {
   searchParams: Promise<{
@@ -25,7 +26,7 @@ export default async function Tops({
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  const baseFilter = `_type == "product" && category == "tshirts"`;
+  const baseFilter = `_type == "product" && category == "suits"`;
 
   let filters = baseFilter;
 
@@ -33,9 +34,14 @@ export default async function Tops({
     filters += ` && (season == "${season}" || season == "mix")`;
   }
 
-  const sortQuery = sort
-    ? `| order(price ${sort === "high" ? "desc" : "asc"})`
-    : `| order(_createdAt desc)`;
+  // 1. Secondary sort based on user selection
+  const secondarySort = sort
+    ? `price ${sort === "high" ? "desc" : "asc"}`
+    : `_createdAt desc`;
+
+  // 2. Primary sort: isInStock desc (true first, false last)
+  const sortQuery = `| order(select(defined(isInStock) => isInStock, true) desc, ${secondarySort})`;
+
   const products = await client.fetch(
     `*[${filters}] ${sortQuery} [$start...$end]`,
     { start, end },
@@ -47,10 +53,10 @@ export default async function Tops({
 
   return (
     <>
-      <Title titleText="تيشرتات وبلوزات" color="primary" />
+      <Title titleText="اطقم سوتس" color="primary" />
       <FilterBar />
       <ProductList products={products} />
-      <Pagination totalPages={totalPages} page={page} category="tops" />
+      <Pagination totalPages={totalPages} page={page} category="suits" />
       <CategoriesSlider />
     </>
   );

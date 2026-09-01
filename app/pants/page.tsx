@@ -4,6 +4,7 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 import Pagination from "@/components/Pagination";
 import FilterBar from "@/components/FilterBar";
+
 const PAGE_SIZE = 12;
 
 export default async function Pants({
@@ -33,17 +34,23 @@ export default async function Pants({
     filters += ` && (season == "${season}" || season == "mix")`;
   }
 
-  const sortQuery = sort
-    ? `| order(price ${sort === "high" ? "desc" : "asc"})`
-    : `| order(_createdAt desc)`;
+  // 1. Determine secondary sort based on user selection
+  const secondarySort = sort
+    ? `price ${sort === "high" ? "desc" : "asc"}`
+    : `_createdAt desc`;
+
+  // 2. Primary sort: isInStock desc (true comes first, false comes last)
+  // Handles undefined values by defaulting them to true
+  const sortQuery = `| order(select(defined(isInStock) => isInStock, true) desc, ${secondarySort})`;
+
   const products = await client.fetch(
     `*[${filters}] ${sortQuery} [$start...$end]`,
     { start, end },
   );
-
   const total = await client.fetch(`count(*[${filters}])`);
 
   const totalPages = Math.ceil(total / PAGE_SIZE);
+
   return (
     <>
       <Title titleText="بناطيل" color="primary" />
