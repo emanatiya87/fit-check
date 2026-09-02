@@ -7,7 +7,7 @@ import FilterBar from "@/components/FilterBar";
 
 const PAGE_SIZE = 12;
 
-export default async function Suits({
+export default async function Tops({
   searchParams,
 }: {
   searchParams: Promise<{
@@ -26,7 +26,7 @@ export default async function Suits({
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  const baseFilter = `_type == "product" && category == "suits"`;
+  const baseFilter = `_type == "product" && category == "tshirts"`;
 
   let filters = baseFilter;
 
@@ -53,10 +53,10 @@ export default async function Suits({
 
   return (
     <>
-      <Title titleText="اطقم سوتس" color="primary" />
+      <Title titleText="تيشرتات وبلوزات" color="primary" />
       <FilterBar />
       <ProductList products={products} />
-      <Pagination totalPages={totalPages} page={page} category="suits" />
+      <Pagination totalPages={totalPages} page={page} category="tops" />
       <CategoriesSlider />
     </>
   );
