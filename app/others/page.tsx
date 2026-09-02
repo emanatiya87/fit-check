@@ -4,6 +4,7 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 import Pagination from "@/components/Pagination";
 import FilterBar from "@/components/FilterBar";
+
 const PAGE_SIZE = 12;
 
 export default async function Others({
@@ -33,9 +34,14 @@ export default async function Others({
     filters += ` && (season == "${season}" || season == "mix")`;
   }
 
-  const sortQuery = sort
-    ? `| order(price ${sort === "high" ? "desc" : "asc"})`
-    : `| order(_createdAt desc)`;
+  // 1. Secondary sort based on user selection
+  const secondarySort = sort
+    ? `price ${sort === "high" ? "desc" : "asc"}`
+    : `_createdAt desc`;
+
+  // 2. Primary sort: isInStock desc (true first, false last)
+  const sortQuery = `| order(select(defined(isInStock) => isInStock, true) desc, ${secondarySort})`;
+
   const products = await client.fetch(
     `*[${filters}] ${sortQuery} [$start...$end]`,
     { start, end },
@@ -44,6 +50,7 @@ export default async function Others({
   const total = await client.fetch(`count(*[${filters}])`);
 
   const totalPages = Math.ceil(total / PAGE_SIZE);
+
   return (
     <>
       <Title titleText="منتجات اخرى" color="primary" />
