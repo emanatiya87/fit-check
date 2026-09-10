@@ -35,6 +35,9 @@ export default function Home() {
       <Suspense fallback={<ProductSkeleton />}>
         <SampleProducts category={"dresses"} title={"احدث الفساتين"} />
       </Suspense>
+      <Suspense fallback={<ProductSkeleton />}>
+        <SampleProducts category={"others"} title={"احدث المنتجات الاخرى"} />
+      </Suspense>
       <Suspense fallback={<LoadingSlider />}>
         <CategoriesSlider />
       </Suspense>

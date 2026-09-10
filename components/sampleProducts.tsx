@@ -17,6 +17,7 @@ export default async function SampleProducts({
     pants: "pants",
     suits: "suits",
     dresses: "dresses",
+    others: "others",
   };
   const products = await client.fetch(
     `*[_type == "product" && category == $category] | order(_createdAt desc) [0...5]`,
