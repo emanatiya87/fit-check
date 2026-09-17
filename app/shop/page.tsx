@@ -4,6 +4,7 @@ import CategoriesSlider from "@/components/CategoriesSlider";
 import Title from "@/components/title";
 import Pagination from "@/components/Pagination";
 import Searchbar from "@/components/searchbar";
+
 const PAGE_SIZE = 20;
 
 export default async function Shop({
@@ -31,7 +32,7 @@ export default async function Shop({
     _type == "product" &&
     ($search == "" || title match "*" + $search + "*")
   ]
-  | order(_createdAt desc)
+  | order(select(defined(isInStock) => isInStock, true) desc, _createdAt desc)
   [$start...$end]`,
     {
       search,
