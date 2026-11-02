@@ -14,10 +14,10 @@ export default function Banner() {
         priority
         className="absolute h-dvh w-dvw -z-10"
       />
-      <div className="w-full md:w-1/3 self-end relative ">
+      <div className="w-full md:w-1/2 relative ps-5 flex items-center justify-center">
         <Image
-          src="/summer.webp"
-          alt="summer img"
+          src="/winter.png"
+          alt="winter img"
           width={500}
           height={500}
           priority
@@ -27,7 +27,7 @@ export default function Banner() {
 
       <div className="flex flex-col items-center justify-center gap-2 md:gap-8 py-3  w-3/4">
         <p className="title-bg text-2xl md:text-5xl font-bold text-center ">
-          خصومات الصيف المميزة
+          خصومات الشتاء المميزة
         </p>
         {/* <h2 className="text-3xl md:text-7xl text-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-bold">
           حتى %50
